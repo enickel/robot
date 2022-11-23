@@ -1,0 +1,2049 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221123 18:24:20.385" rpa="false" schemaversion="3">
+<suite id="s1" name="Tv Check Extended" source="/home/user/Documents/@projects/robotframework/tv/tv_check_extended.robot">
+<test id="s1-t1" name="Configure interface" line="28">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Configuration of test machine</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221123 18:24:20.418" endtime="20221123 18:24:20.418"/>
+</kw>
+<doc>Trying to obtain IP for the test machine</doc>
+<tag>test setup</tag>
+<status status="PASS" starttime="20221123 18:24:20.417" endtime="20221123 18:24:20.419"/>
+</test>
+<test id="s1-t2" name="Identifica a subrede do HG" line="34">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Identificando interface local e rede do HG</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221123 18:24:20.419" endtime="20221123 18:24:20.419"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ip route | grep default | cut -d" " -f5</arg>
+<arg>shell=yes</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:20.420" level="INFO">Starting process:
+ip route | grep default | cut -d" " -f5</msg>
+<msg timestamp="20221123 18:24:20.423" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:20.425" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:20.425" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:20.420" endtime="20221123 18:24:20.425"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221123 18:24:20.426" endtime="20221123 18:24:20.427"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:20.427" level="INFO">enp0s31f6</msg>
+<status status="PASS" starttime="20221123 18:24:20.427" endtime="20221123 18:24:20.427"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${ROBOT_IF}</arg>
+<arg>{result.stdout}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20221123 18:24:20.428" level="INFO">${ROBOT_IF} = {result.stdout}</msg>
+<status status="PASS" starttime="20221123 18:24:20.427" endtime="20221123 18:24:20.428"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ip route | grep default | cut -d" " -f3</arg>
+<arg>shell=yes</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:20.428" level="INFO">Starting process:
+ip route | grep default | cut -d" " -f3</msg>
+<msg timestamp="20221123 18:24:20.432" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:20.436" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:20.436" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:20.428" endtime="20221123 18:24:20.436"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221123 18:24:20.437" endtime="20221123 18:24:20.438"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:20.439" level="INFO">192.168.25.1</msg>
+<status status="PASS" starttime="20221123 18:24:20.439" endtime="20221123 18:24:20.440"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${HG_IP}</arg>
+<arg>${result.stdout}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20221123 18:24:20.441" level="INFO">${HG_IP} = 192.168.25.1</msg>
+<status status="PASS" starttime="20221123 18:24:20.440" endtime="20221123 18:24:20.441"/>
+</kw>
+<tag>environment info</tag>
+<status status="PASS" starttime="20221123 18:24:20.419" endtime="20221123 18:24:20.441"/>
+</test>
+<test id="s1-t3" name="Verificando a conectividade com o HG - 192.168.25.1" line="51">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Obtaining HG info</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221123 18:24:20.442" endtime="20221123 18:24:20.442"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>${HG_IP}</arg>
+<arg>-c</arg>
+<arg>2</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:20.443" level="INFO">Starting process:
+ping 192.168.25.1 -c 2 -W 2</msg>
+<msg timestamp="20221123 18:24:20.448" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:21.482" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:21.483" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:20.442" endtime="20221123 18:24:21.483"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:21.488" level="INFO">PING 192.168.25.1 (192.168.25.1) 56(84) bytes of data.
+64 bytes from 192.168.25.1: icmp_seq=1 ttl=64 time=0.459 ms
+64 bytes from 192.168.25.1: icmp_seq=2 ttl=64 time=0.336 ms
+
+--- 192.168.25.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1031ms
+rtt min/avg/max/mdev = 0.336/0.397/0.459/0.061 ms</msg>
+<status status="PASS" starttime="20221123 18:24:21.485" endtime="20221123 18:24:21.488"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>2 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:21.489" endtime="20221123 18:24:21.491"/>
+</kw>
+<tag>environment info</tag>
+<status status="PASS" starttime="20221123 18:24:20.441" endtime="20221123 18:24:21.492"/>
+</test>
+<test id="s1-t4" name="Verificando a conexão com a internet - 8.8.8.8" line="77">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>8.8.8.8</arg>
+<arg>-c</arg>
+<arg>2</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:21.495" level="INFO">Starting process:
+ping 8.8.8.8 -c 2 -W 2</msg>
+<msg timestamp="20221123 18:24:21.505" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:22.521" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:22.522" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:21.494" endtime="20221123 18:24:22.522"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:22.527" level="INFO">PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=54 time=10.3 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=54 time=10.3 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 10.271/10.273/10.275/0.002 ms</msg>
+<status status="PASS" starttime="20221123 18:24:22.524" endtime="20221123 18:24:22.527"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>2 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:22.527" endtime="20221123 18:24:22.529"/>
+</kw>
+<tag>ping</tag>
+<status status="PASS" starttime="20221123 18:24:21.493" endtime="20221123 18:24:22.530"/>
+</test>
+<test id="s1-t5" name="Verificando a conexão com o GW de TV - 10.114.10.129" line="83">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>${TV_GW}</arg>
+<arg>-c</arg>
+<arg>2</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:22.534" level="INFO">Starting process:
+ping 10.114.10.129 -c 2 -W 2</msg>
+<msg timestamp="20221123 18:24:22.542" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:23.549" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:23.551" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:22.533" endtime="20221123 18:24:23.551"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:23.554" level="INFO">PING 10.114.10.129 (10.114.10.129) 56(84) bytes of data.
+64 bytes from 10.114.10.129: icmp_seq=1 ttl=63 time=1.84 ms
+64 bytes from 10.114.10.129: icmp_seq=2 ttl=63 time=1.38 ms
+
+--- 10.114.10.129 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 1.384/1.611/1.838/0.227 ms</msg>
+<status status="PASS" starttime="20221123 18:24:23.552" endtime="20221123 18:24:23.554"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>2 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:23.554" endtime="20221123 18:24:23.555"/>
+</kw>
+<tag>ping</tag>
+<status status="PASS" starttime="20221123 18:24:22.531" endtime="20221123 18:24:23.555"/>
+</test>
+<test id="s1-t6" name="Ping DNS primario de tv - 177.16.30.7" line="89">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>${TV_DNS_PRI}</arg>
+<arg>-c</arg>
+<arg>3</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:23.556" level="INFO">Starting process:
+ping 177.16.30.7 -c 3 -W 2</msg>
+<msg timestamp="20221123 18:24:23.559" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:25.584" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:25.585" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:23.556" endtime="20221123 18:24:25.585"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:25.588" level="INFO">PING 177.16.30.7 (177.16.30.7) 56(84) bytes of data.
+64 bytes from 177.16.30.7: icmp_seq=1 ttl=247 time=15.6 ms
+64 bytes from 177.16.30.7: icmp_seq=2 ttl=247 time=14.6 ms
+64 bytes from 177.16.30.7: icmp_seq=3 ttl=247 time=19.3 ms
+
+--- 177.16.30.7 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 14.628/16.535/19.334/2.021 ms</msg>
+<status status="PASS" starttime="20221123 18:24:25.586" endtime="20221123 18:24:25.588"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>3 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:25.589" endtime="20221123 18:24:25.589"/>
+</kw>
+<tag>ping</tag>
+<status status="PASS" starttime="20221123 18:24:23.555" endtime="20221123 18:24:25.589"/>
+</test>
+<test id="s1-t7" name="Ping DNS secundario de tv - 177.16.30.67" line="95">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>${TV_DNS_SEC}</arg>
+<arg>-c</arg>
+<arg>3</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:25.590" level="INFO">Starting process:
+ping 177.16.30.67 -c 3 -W 2</msg>
+<msg timestamp="20221123 18:24:25.593" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:27.608" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:27.609" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:25.590" endtime="20221123 18:24:27.609"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:27.612" level="INFO">PING 177.16.30.67 (177.16.30.67) 56(84) bytes of data.
+64 bytes from 177.16.30.67: icmp_seq=1 ttl=250 time=24.4 ms
+64 bytes from 177.16.30.67: icmp_seq=2 ttl=250 time=11.4 ms
+64 bytes from 177.16.30.67: icmp_seq=3 ttl=250 time=9.64 ms
+
+--- 177.16.30.67 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 9.644/15.171/24.439/6.593 ms</msg>
+<status status="PASS" starttime="20221123 18:24:27.611" endtime="20221123 18:24:27.613"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>3 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:27.613" endtime="20221123 18:24:27.613"/>
+</kw>
+<tag>ping</tag>
+<status status="PASS" starttime="20221123 18:24:25.590" endtime="20221123 18:24:27.613"/>
+</test>
+<test id="s1-t8" name="Resolução FQDN a.ntp.br no DNS do HG" line="101">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>a.ntp.br</arg>
+<arg>${HG_IP}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:27.614" level="INFO">Starting process:
+nslookup a.ntp.br 192.168.25.1</msg>
+<msg timestamp="20221123 18:24:27.617" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:27.642" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:27.643" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:27.614" endtime="20221123 18:24:27.643"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:27.648" level="INFO">Server:		192.168.25.1
+Address:	192.168.25.1#53
+
+Non-authoritative answer:
+Name:	a.ntp.br
+Address: 200.160.0.8
+Name:	a.ntp.br
+Address: 2001:12ff::8
+</msg>
+<status status="PASS" starttime="20221123 18:24:27.644" endtime="20221123 18:24:27.648"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:27.651" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:27.649" endtime="20221123 18:24:27.652"/>
+</kw>
+<tag>dns</tag>
+<status status="PASS" starttime="20221123 18:24:27.614" endtime="20221123 18:24:27.652"/>
+</test>
+<test id="s1-t9" name="Resolução FQDN telefonica.com no DNS primário de tv" line="107">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>telefonica.com</arg>
+<arg>${TV_DNS_PRI}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:27.656" level="INFO">Starting process:
+nslookup telefonica.com 177.16.30.7</msg>
+<msg timestamp="20221123 18:24:27.663" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:27.931" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:27.932" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:27.655" endtime="20221123 18:24:27.932"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:27.938" level="INFO">Server:		177.16.30.7
+Address:	177.16.30.7#53
+
+Non-authoritative answer:
+Name:	telefonica.com
+Address: 192.0.66.32
+</msg>
+<status status="PASS" starttime="20221123 18:24:27.934" endtime="20221123 18:24:27.938"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:27.942" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:27.939" endtime="20221123 18:24:27.942"/>
+</kw>
+<tag>dns</tag>
+<tag>dns primario</tag>
+<status status="PASS" starttime="20221123 18:24:27.653" endtime="20221123 18:24:27.943"/>
+</test>
+<test id="s1-t10" name="Resolução FQDN canoway-br.cdn.telefonica.com no DNS primário de tv" line="113">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>canoway-br.cdn.telefonica.com</arg>
+<arg>${TV_DNS_PRI}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:27.949" level="INFO">Starting process:
+nslookup canoway-br.cdn.telefonica.com 177.16.30.7</msg>
+<msg timestamp="20221123 18:24:27.956" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.047" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.048" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:27.947" endtime="20221123 18:24:28.048"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.052" level="INFO">Server:		177.16.30.7
+Address:	177.16.30.7#53
+
+Non-authoritative answer:
+canoway-br.cdn.telefonica.com	canonical name = b44059.6.cdn.telefonica.com.
+Name:	b44059.6.cdn.telefonica.com
+Address: 201.95.254.215
+Name:	b44059.6.cdn.telefonica.com
+Address: 200.161.71.38
+Name:	b44059.6.cdn.telefonica.com
+Address: 200.161.71.45
+Name:	b44059.6.cdn.telefonica.com
+Address: 201.95.254.216
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.049" endtime="20221123 18:24:28.052"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.055" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.053" endtime="20221123 18:24:28.055"/>
+</kw>
+<tag>dns</tag>
+<tag>dns primario</tag>
+<status status="PASS" starttime="20221123 18:24:27.945" endtime="20221123 18:24:28.056"/>
+</test>
+<test id="s1-t11" name="Resolução FQDN b41580.cdn.telefonica.com no DNS primário de tv" line="119">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>b41580.cdn.telefonica.com</arg>
+<arg>${TV_DNS_PRI}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.060" level="INFO">Starting process:
+nslookup b41580.cdn.telefonica.com 177.16.30.7</msg>
+<msg timestamp="20221123 18:24:28.068" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.146" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.147" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.058" endtime="20221123 18:24:28.147"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.152" level="INFO">Server:		177.16.30.7
+Address:	177.16.30.7#53
+
+Non-authoritative answer:
+b41580.cdn.telefonica.com	canonical name = b41580.6.cdn.telefonica.com.
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.52.90
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.52.87
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.52.91
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.52.88
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.52.117
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.52.84
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.149" endtime="20221123 18:24:28.152"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.154" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.152" endtime="20221123 18:24:28.154"/>
+</kw>
+<tag>dns</tag>
+<tag>dns primario</tag>
+<status status="PASS" starttime="20221123 18:24:28.057" endtime="20221123 18:24:28.155"/>
+</test>
+<test id="s1-t12" name="Resolução FQDN sprd.br.op.gvp.telefonica.com no DNS primário de tv" line="125">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>sprd.br.op.gvp.telefonica.com</arg>
+<arg>${TV_DNS_PRI}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.158" level="INFO">Starting process:
+nslookup sprd.br.op.gvp.telefonica.com 177.16.30.7</msg>
+<msg timestamp="20221123 18:24:28.166" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.226" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.227" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.157" endtime="20221123 18:24:28.227"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.229" level="INFO">Server:		177.16.30.7
+Address:	177.16.30.7#53
+
+Non-authoritative answer:
+Name:	sprd.br.op.gvp.telefonica.com
+Address: 177.16.30.6
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.227" endtime="20221123 18:24:28.229"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.230" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.229" endtime="20221123 18:24:28.230"/>
+</kw>
+<tag>dns</tag>
+<tag>dns primario</tag>
+<status status="PASS" starttime="20221123 18:24:28.156" endtime="20221123 18:24:28.230"/>
+</test>
+<test id="s1-t13" name="Resolução FQDN naplm.br.op.gvp.telefonica.com no DNS primário de tv" line="131">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>naplm.br.op.gvp.telefonica.com</arg>
+<arg>${TV_DNS_PRI}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.232" level="INFO">Starting process:
+nslookup naplm.br.op.gvp.telefonica.com 177.16.30.7</msg>
+<msg timestamp="20221123 18:24:28.235" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.292" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.293" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.231" endtime="20221123 18:24:28.293"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.295" level="INFO">Server:		177.16.30.7
+Address:	177.16.30.7#53
+
+Non-authoritative answer:
+Name:	naplm.br.op.gvp.telefonica.com
+Address: 177.16.30.37
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.294" endtime="20221123 18:24:28.295"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.296" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.295" endtime="20221123 18:24:28.296"/>
+</kw>
+<tag>dns</tag>
+<tag>dns primario</tag>
+<status status="PASS" starttime="20221123 18:24:28.231" endtime="20221123 18:24:28.296"/>
+</test>
+<test id="s1-t14" name="Resolução FQDN dhep.br.op.gvp.telefonica.com no DNS primário de tv" line="137">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>dhep.br.op.gvp.telefonica.com</arg>
+<arg>${TV_DNS_PRI}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.298" level="INFO">Starting process:
+nslookup dhep.br.op.gvp.telefonica.com 177.16.30.7</msg>
+<msg timestamp="20221123 18:24:28.301" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.353" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.353" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.297" endtime="20221123 18:24:28.353"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.355" level="INFO">Server:		177.16.30.7
+Address:	177.16.30.7#53
+
+Non-authoritative answer:
+Name:	dhep.br.op.gvp.telefonica.com
+Address: 177.16.30.8
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.354" endtime="20221123 18:24:28.355"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.355" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.355" endtime="20221123 18:24:28.355"/>
+</kw>
+<tag>dns</tag>
+<tag>dns primario</tag>
+<status status="PASS" starttime="20221123 18:24:28.297" endtime="20221123 18:24:28.356"/>
+</test>
+<test id="s1-t15" name="Resolução FQDN cota-b.cdn.telefonica.com no DNS primário de tv" line="143">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>cota-b.cdn.telefonica.com</arg>
+<arg>${TV_DNS_PRI}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.357" level="INFO">Starting process:
+nslookup cota-b.cdn.telefonica.com 177.16.30.7</msg>
+<msg timestamp="20221123 18:24:28.359" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.423" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.424" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.356" endtime="20221123 18:24:28.424"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.429" level="INFO">Server:		177.16.30.7
+Address:	177.16.30.7#53
+
+Non-authoritative answer:
+cota-b.cdn.telefonica.com	canonical name = b39878.6.cdn.telefonica.com.
+Name:	b39878.6.cdn.telefonica.com
+Address: 201.95.254.216
+Name:	b39878.6.cdn.telefonica.com
+Address: 201.95.254.215
+Name:	b39878.6.cdn.telefonica.com
+Address: 200.161.71.38
+Name:	b39878.6.cdn.telefonica.com
+Address: 200.161.71.45
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.426" endtime="20221123 18:24:28.429"/>
+</kw>
+<tag>dns</tag>
+<tag>dns primario</tag>
+<status status="PASS" starttime="20221123 18:24:28.356" endtime="20221123 18:24:28.430"/>
+</test>
+<test id="s1-t16" name="Resolução FQDN spotlight-br.cdn.telefonica.com no DNS primário de tv" line="148">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>spotlight-br.cdn.telefonica.com</arg>
+<arg>${TV_DNS_PRI}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.436" level="INFO">Starting process:
+nslookup spotlight-br.cdn.telefonica.com 177.16.30.7</msg>
+<msg timestamp="20221123 18:24:28.445" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.516" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.517" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.434" endtime="20221123 18:24:28.517"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.521" level="INFO">Server:		177.16.30.7
+Address:	177.16.30.7#53
+
+Non-authoritative answer:
+spotlight-br.cdn.telefonica.com	canonical name = b44987.6.cdn.telefonica.com.
+Name:	b44987.6.cdn.telefonica.com
+Address: 201.95.254.206
+Name:	b44987.6.cdn.telefonica.com
+Address: 201.95.254.205
+Name:	b44987.6.cdn.telefonica.com
+Address: 201.95.254.198
+Name:	b44987.6.cdn.telefonica.com
+Address: 152.255.20.83
+Name:	b44987.6.cdn.telefonica.com
+Address: 200.146.72.233
+Name:	b44987.6.cdn.telefonica.com
+Address: 152.255.20.84
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.519" endtime="20221123 18:24:28.522"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.524" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.522" endtime="20221123 18:24:28.524"/>
+</kw>
+<tag>dns</tag>
+<tag>dns primario</tag>
+<status status="PASS" starttime="20221123 18:24:28.432" endtime="20221123 18:24:28.525"/>
+</test>
+<test id="s1-t17" name="Resolução FQDN telefonica.com no DNS secundario de tv" line="154">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>telefonica.com</arg>
+<arg>${TV_DNS_SEC}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.528" level="INFO">Starting process:
+nslookup telefonica.com 177.16.30.67</msg>
+<msg timestamp="20221123 18:24:28.537" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.795" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.796" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.527" endtime="20221123 18:24:28.796"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.801" level="INFO">Server:		177.16.30.67
+Address:	177.16.30.67#53
+
+Non-authoritative answer:
+Name:	telefonica.com
+Address: 192.0.66.32
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.798" endtime="20221123 18:24:28.801"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.803" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.801" endtime="20221123 18:24:28.804"/>
+</kw>
+<tag>dns</tag>
+<tag>dns secundario</tag>
+<status status="PASS" starttime="20221123 18:24:28.526" endtime="20221123 18:24:28.804"/>
+</test>
+<test id="s1-t18" name="Resolução FQDN canoway-br.cdn.telefonica.com no DNS secundario de tv" line="160">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>canoway-br.cdn.telefonica.com</arg>
+<arg>${TV_DNS_SEC}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.808" level="INFO">Starting process:
+nslookup canoway-br.cdn.telefonica.com 177.16.30.67</msg>
+<msg timestamp="20221123 18:24:28.816" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.893" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.894" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.807" endtime="20221123 18:24:28.894"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.899" level="INFO">Server:		177.16.30.67
+Address:	177.16.30.67#53
+
+Non-authoritative answer:
+canoway-br.cdn.telefonica.com	canonical name = b44059.6.cdn.telefonica.com.
+Name:	b44059.6.cdn.telefonica.com
+Address: 201.95.254.216
+Name:	b44059.6.cdn.telefonica.com
+Address: 201.95.254.215
+Name:	b44059.6.cdn.telefonica.com
+Address: 200.161.71.38
+Name:	b44059.6.cdn.telefonica.com
+Address: 200.161.71.45
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.896" endtime="20221123 18:24:28.899"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.902" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.899" endtime="20221123 18:24:28.902"/>
+</kw>
+<tag>dns</tag>
+<tag>dns secundario</tag>
+<status status="PASS" starttime="20221123 18:24:28.805" endtime="20221123 18:24:28.903"/>
+</test>
+<test id="s1-t19" name="Resolução FQDN b41580.cdn.telefonica.com no DNS secundario de tv" line="166">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>b41580.cdn.telefonica.com</arg>
+<arg>${TV_DNS_SEC}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.907" level="INFO">Starting process:
+nslookup b41580.cdn.telefonica.com 177.16.30.67</msg>
+<msg timestamp="20221123 18:24:28.914" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:28.975" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:28.975" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.905" endtime="20221123 18:24:28.975"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:28.978" level="INFO">Server:		177.16.30.67
+Address:	177.16.30.67#53
+
+Non-authoritative answer:
+b41580.cdn.telefonica.com	canonical name = b41580.6.cdn.telefonica.com.
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.53.69
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.53.78
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.53.68
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.53.79
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.53.67
+Name:	b41580.6.cdn.telefonica.com
+Address: 201.0.53.76
+</msg>
+<status status="PASS" starttime="20221123 18:24:28.976" endtime="20221123 18:24:28.978"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:28.979" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.978" endtime="20221123 18:24:28.980"/>
+</kw>
+<tag>dns</tag>
+<tag>dns secundario</tag>
+<status status="PASS" starttime="20221123 18:24:28.904" endtime="20221123 18:24:28.980"/>
+</test>
+<test id="s1-t20" name="Resolução FQDN sprd.br.op.gvp.telefonica.com no DNS secundario de tv" line="172">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>sprd.br.op.gvp.telefonica.com</arg>
+<arg>${TV_DNS_SEC}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:28.983" level="INFO">Starting process:
+nslookup sprd.br.op.gvp.telefonica.com 177.16.30.67</msg>
+<msg timestamp="20221123 18:24:28.988" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:29.040" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:29.042" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:28.982" endtime="20221123 18:24:29.042"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:29.046" level="INFO">Server:		177.16.30.67
+Address:	177.16.30.67#53
+
+Non-authoritative answer:
+Name:	sprd.br.op.gvp.telefonica.com
+Address: 177.16.30.6
+</msg>
+<status status="PASS" starttime="20221123 18:24:29.043" endtime="20221123 18:24:29.046"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:29.049" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.047" endtime="20221123 18:24:29.049"/>
+</kw>
+<tag>dns</tag>
+<tag>dns secundario</tag>
+<status status="PASS" starttime="20221123 18:24:28.981" endtime="20221123 18:24:29.050"/>
+</test>
+<test id="s1-t21" name="Resolução FQDN naplm.br.op.gvp.telefonica.com no DNS secundario de tv" line="178">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>naplm.br.op.gvp.telefonica.com</arg>
+<arg>${TV_DNS_SEC}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:29.053" level="INFO">Starting process:
+nslookup naplm.br.op.gvp.telefonica.com 177.16.30.67</msg>
+<msg timestamp="20221123 18:24:29.062" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:29.110" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:29.110" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.052" endtime="20221123 18:24:29.110"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:29.112" level="INFO">Server:		177.16.30.67
+Address:	177.16.30.67#53
+
+Non-authoritative answer:
+Name:	naplm.br.op.gvp.telefonica.com
+Address: 177.16.30.37
+</msg>
+<status status="PASS" starttime="20221123 18:24:29.111" endtime="20221123 18:24:29.112"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:29.113" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.112" endtime="20221123 18:24:29.113"/>
+</kw>
+<tag>dns</tag>
+<tag>dns secundario</tag>
+<status status="PASS" starttime="20221123 18:24:29.051" endtime="20221123 18:24:29.113"/>
+</test>
+<test id="s1-t22" name="Resolução FQDN dhep.br.op.gvp.telefonica.com no DNS secundario de tv" line="184">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>dhep.br.op.gvp.telefonica.com</arg>
+<arg>${TV_DNS_SEC}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:29.115" level="INFO">Starting process:
+nslookup dhep.br.op.gvp.telefonica.com 177.16.30.67</msg>
+<msg timestamp="20221123 18:24:29.117" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:29.155" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:29.156" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.114" endtime="20221123 18:24:29.156"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:29.158" level="INFO">Server:		177.16.30.67
+Address:	177.16.30.67#53
+
+Non-authoritative answer:
+Name:	dhep.br.op.gvp.telefonica.com
+Address: 177.16.30.8
+</msg>
+<status status="PASS" starttime="20221123 18:24:29.157" endtime="20221123 18:24:29.158"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:29.159" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.158" endtime="20221123 18:24:29.159"/>
+</kw>
+<tag>dns</tag>
+<tag>dns secundario</tag>
+<status status="PASS" starttime="20221123 18:24:29.114" endtime="20221123 18:24:29.160"/>
+</test>
+<test id="s1-t23" name="Resolução FQDN cota-b.cdn.telefonica.com no DNS secundario de tv" line="190">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>cota-b.cdn.telefonica.com</arg>
+<arg>${TV_DNS_SEC}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:29.161" level="INFO">Starting process:
+nslookup cota-b.cdn.telefonica.com 177.16.30.67</msg>
+<msg timestamp="20221123 18:24:29.165" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:29.223" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:29.224" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.161" endtime="20221123 18:24:29.224"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:29.228" level="INFO">Server:		177.16.30.67
+Address:	177.16.30.67#53
+
+Non-authoritative answer:
+cota-b.cdn.telefonica.com	canonical name = b39878.6.cdn.telefonica.com.
+Name:	b39878.6.cdn.telefonica.com
+Address: 201.95.254.216
+Name:	b39878.6.cdn.telefonica.com
+Address: 201.95.254.215
+Name:	b39878.6.cdn.telefonica.com
+Address: 200.161.71.38
+Name:	b39878.6.cdn.telefonica.com
+Address: 200.161.71.45
+</msg>
+<status status="PASS" starttime="20221123 18:24:29.226" endtime="20221123 18:24:29.229"/>
+</kw>
+<tag>dns</tag>
+<tag>dns secundario</tag>
+<status status="PASS" starttime="20221123 18:24:29.160" endtime="20221123 18:24:29.229"/>
+</test>
+<test id="s1-t24" name="Resolução FQDN spotlight-br.cdn.telefonica.com no DNS secundario de tv" line="195">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>nslookup</arg>
+<arg>spotlight-br.cdn.telefonica.com</arg>
+<arg>${TV_DNS_SEC}</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:29.233" level="INFO">Starting process:
+nslookup spotlight-br.cdn.telefonica.com 177.16.30.67</msg>
+<msg timestamp="20221123 18:24:29.240" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:29.299" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:29.300" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.232" endtime="20221123 18:24:29.300"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:29.302" level="INFO">Server:		177.16.30.67
+Address:	177.16.30.67#53
+
+Non-authoritative answer:
+spotlight-br.cdn.telefonica.com	canonical name = b44987.6.cdn.telefonica.com.
+Name:	b44987.6.cdn.telefonica.com
+Address: 201.95.254.203
+Name:	b44987.6.cdn.telefonica.com
+Address: 200.146.72.233
+Name:	b44987.6.cdn.telefonica.com
+Address: 201.95.254.197
+Name:	b44987.6.cdn.telefonica.com
+Address: 200.146.72.232
+Name:	b44987.6.cdn.telefonica.com
+Address: 201.95.254.231
+Name:	b44987.6.cdn.telefonica.com
+Address: 201.95.254.229
+</msg>
+<status status="PASS" starttime="20221123 18:24:29.300" endtime="20221123 18:24:29.303"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:29.305" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.303" endtime="20221123 18:24:29.305"/>
+</kw>
+<tag>dns</tag>
+<tag>dns secundario</tag>
+<status status="PASS" starttime="20221123 18:24:29.230" endtime="20221123 18:24:29.305"/>
+</test>
+<test id="s1-t25" name="Ping para FCC - 177.16.30.252" line="201">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>${TV_FCC}</arg>
+<arg>-c</arg>
+<arg>3</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:29.308" level="INFO">Starting process:
+ping 177.16.30.252 -c 3 -W 2</msg>
+<msg timestamp="20221123 18:24:29.314" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:31.331" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:31.333" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:29.307" endtime="20221123 18:24:31.333"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:31.337" level="INFO">PING 177.16.30.252 (177.16.30.252) 56(84) bytes of data.
+64 bytes from 177.16.30.252: icmp_seq=1 ttl=58 time=11.5 ms
+64 bytes from 177.16.30.252: icmp_seq=2 ttl=58 time=7.10 ms
+64 bytes from 177.16.30.252: icmp_seq=3 ttl=58 time=11.4 ms
+
+--- 177.16.30.252 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 7.100/9.996/11.450/2.048 ms</msg>
+<status status="PASS" starttime="20221123 18:24:31.334" endtime="20221123 18:24:31.337"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>3 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:31.337" endtime="20221123 18:24:31.339"/>
+</kw>
+<tag>ping</tag>
+<status status="PASS" starttime="20221123 18:24:29.306" endtime="20221123 18:24:31.340"/>
+</test>
+<test id="s1-t26" name="Ping para Datahub - 177.16.30.8" line="207">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>${TV_DATAHUB}</arg>
+<arg>-c</arg>
+<arg>3</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:31.343" level="INFO">Starting process:
+ping 177.16.30.8 -c 3 -W 2</msg>
+<msg timestamp="20221123 18:24:31.350" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:33.372" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:33.373" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:31.342" endtime="20221123 18:24:33.373"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:33.375" level="INFO">PING 177.16.30.8 (177.16.30.8) 56(84) bytes of data.
+64 bytes from 177.16.30.8: icmp_seq=1 ttl=247 time=15.1 ms
+64 bytes from 177.16.30.8: icmp_seq=2 ttl=247 time=16.6 ms
+64 bytes from 177.16.30.8: icmp_seq=3 ttl=247 time=17.3 ms
+
+--- 177.16.30.8 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 15.112/16.359/17.345/0.930 ms</msg>
+<status status="PASS" starttime="20221123 18:24:33.374" endtime="20221123 18:24:33.375"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>3 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:33.376" endtime="20221123 18:24:33.376"/>
+</kw>
+<tag>ping</tag>
+<status status="PASS" starttime="20221123 18:24:31.341" endtime="20221123 18:24:33.376"/>
+</test>
+<test id="s1-t27" name="Ping para RTCP Report Collector - 177.16.30.254" line="213">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>${TV_RTCP_COLLECTOR}</arg>
+<arg>-c</arg>
+<arg>3</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:33.377" level="INFO">Starting process:
+ping 177.16.30.254 -c 3 -W 2</msg>
+<msg timestamp="20221123 18:24:33.380" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:35.393" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:35.394" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:33.377" endtime="20221123 18:24:35.394"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:35.398" level="INFO">PING 177.16.30.254 (177.16.30.254) 56(84) bytes of data.
+64 bytes from 177.16.30.254: icmp_seq=1 ttl=59 time=8.30 ms
+64 bytes from 177.16.30.254: icmp_seq=2 ttl=59 time=14.7 ms
+64 bytes from 177.16.30.254: icmp_seq=3 ttl=59 time=7.54 ms
+
+--- 177.16.30.254 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 7.537/10.179/14.700/3.211 ms</msg>
+<status status="PASS" starttime="20221123 18:24:35.395" endtime="20221123 18:24:35.398"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>3 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:35.398" endtime="20221123 18:24:35.399"/>
+</kw>
+<status status="PASS" starttime="20221123 18:24:33.377" endtime="20221123 18:24:35.399"/>
+</test>
+<test id="s1-t28" name="Ping para spotlight-br.cdn.telefonica.com" line="218">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>spotlight-br.cdn.telefonica.com</arg>
+<arg>-c</arg>
+<arg>3</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:35.400" level="INFO">Starting process:
+ping spotlight-br.cdn.telefonica.com -c 3 -W 2</msg>
+<msg timestamp="20221123 18:24:35.403" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:37.490" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:37.491" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:35.400" endtime="20221123 18:24:37.491"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:37.495" level="INFO">PING b44987.6.cdn.telefonica.com (200.146.72.233) 56(84) bytes of data.
+64 bytes from invespark233.static.gvt.net.br (200.146.72.233): icmp_seq=1 ttl=52 time=20.7 ms
+64 bytes from invespark233.static.gvt.net.br (200.146.72.233): icmp_seq=2 ttl=52 time=13.4 ms
+64 bytes from invespark233.static.gvt.net.br (200.146.72.233): icmp_seq=3 ttl=52 time=16.3 ms
+
+--- b44987.6.cdn.telefonica.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 13.401/16.802/20.669/2.985 ms</msg>
+<status status="PASS" starttime="20221123 18:24:37.493" endtime="20221123 18:24:37.495"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>3 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:37.495" endtime="20221123 18:24:37.496"/>
+</kw>
+<tag>ping</tag>
+<status status="PASS" starttime="20221123 18:24:35.400" endtime="20221123 18:24:37.496"/>
+</test>
+<test id="s1-t29" name="Ping para cota-b.cdn.telefonica.com" line="224">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>ping</arg>
+<arg>cota-b.cdn.telefonica.com</arg>
+<arg>-c</arg>
+<arg>3</arg>
+<arg>-W</arg>
+<arg>2</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:37.497" level="INFO">Starting process:
+ping cota-b.cdn.telefonica.com -c 3 -W 2</msg>
+<msg timestamp="20221123 18:24:37.499" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:39.569" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:39.570" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:37.497" endtime="20221123 18:24:39.570"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:39.571" level="INFO">PING b39878.6.cdn.telefonica.com (201.95.254.215) 56(84) bytes of data.
+64 bytes from 201-95-254-215.dsl.telesp.net.br (201.95.254.215): icmp_seq=1 ttl=54 time=12.6 ms
+64 bytes from 201-95-254-215.dsl.telesp.net.br (201.95.254.215): icmp_seq=2 ttl=54 time=12.4 ms
+64 bytes from 201-95-254-215.dsl.telesp.net.br (201.95.254.215): icmp_seq=3 ttl=54 time=10.9 ms
+
+--- b39878.6.cdn.telefonica.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 10.863/11.937/12.600/0.766 ms</msg>
+<status status="PASS" starttime="20221123 18:24:39.570" endtime="20221123 18:24:39.571"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>3 received</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221123 18:24:39.571" endtime="20221123 18:24:39.572"/>
+</kw>
+<tag>ping</tag>
+<status status="PASS" starttime="20221123 18:24:37.496" endtime="20221123 18:24:39.572"/>
+</test>
+<test id="s1-t30" name="Validate channel - 239.128.1.207" line="242">
+<kw name="Join a channel">
+<arg>${mcast_ip}</arg>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>cvlc rtp://@${mcast_group}:5001 --video-filter\=scene --scene-format\=jpg --scene-ratio\=24 --start-time\=0 --stop-time\=10 --scene-path\="/home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots" vlc://quit -vvv 2&gt;&amp;1 | tee temp/vlc_reproduction.log</arg>
+<arg>shell=yes</arg>
+<arg>timeout=5s</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:39.573" level="INFO">Starting process:
+cvlc rtp://@239.128.1.207:5001 --video-filter=scene --scene-format=jpg --scene-ratio=24 --start-time=0 --stop-time=10 --scene-path="/home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots" vlc://quit -vvv 2&gt;&amp;1 | tee temp/vlc_reproduction.log</msg>
+<msg timestamp="20221123 18:24:39.576" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:44.589" level="INFO">Process did not complete in 5 seconds.</msg>
+<msg timestamp="20221123 18:24:44.590" level="INFO">Gracefully terminating process.</msg>
+<msg timestamp="20221123 18:24:44.690" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:44.691" level="INFO">${result} = &lt;result object with rc -15&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:39.573" endtime="20221123 18:24:44.691"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:44.692" level="INFO">[000055b9aa834640] main libvlc debug: VLC media player - 3.0.16 Vetinari
+[000055b9aa834640] main libvlc debug: Copyright © 1996-2021 the VideoLAN team
+[000055b9aa834640] main libvlc debug: revision 3.0.13-8-g41878ff4f2
+[000055b9aa834640] main libvlc debug: configured with ./configure  '--build=x86_64-linux-gnu' '--prefix=/usr' '--includedir=${prefix}/include' '--mandir=${prefix}/share/man' '--infodir=${prefix}/share/info' '--sysconfdir=/etc' '--localstatedir=/var' '--disable-option-checking' '--disable-silent-rules' '--libdir=${prefix}/lib/x86_64-linux-gnu' '--runstatedir=/run' '--disable-maintainer-mode' '--disable-dependency-tracking' '--disable-debug' '--config-cache' '--disable-update-check' '--enable-fast-install' '--docdir=/usr/share/doc/vlc' '--with-binary-version=3.0.16-1build7' '--enable-a52' '--enable-aa' '--enable-aribsub' '--enable-avahi' '--enable-bluray' '--enable-caca' '--enable-chromaprint' '--enable-chromecast' '--enable-dav1d' '--enable-dbus' '--enable-dca' '--enable-dvbpsi' '--enable-dvdnav' '--enable-faad' '--enable-flac' '--enable-fluidsynth' '--enable-freetype' '--enable-fribidi' '--enable-gles2' '--enable-gnutls' '--enable-harfbuzz' '--enable-jack' '--enable-kate' '--enable-libass' '--enable-libmpeg2' '--enable-libxml2' '--enable-lirc' '--enable-mad' '--enable-matroska' '--enable-mod' '--enable-mpc' '--enable-mpg123' '--enable-mtp' '--enable-ncurses' '--enable-notify' '--enable-ogg' '--enable-opus' '--enable-pulse' '--enable-qt' '--enable-realrtsp' '--enable-samplerate' '--enable-sdl-image' '--enable-sftp' '--enable-shine' '--enable-shout' '--enable-skins2' '--enable-sndio' '--enable-soxr' '--enable-spatialaudio' '--enable-speex' '--enable-svg' '--enable-svgdec' '--enable-taglib' '--enable-theora' '--enable-twolame' '--enable-upnp' '--enable-vdpau' '--enable-vnc' '--enable-vorbis' '--enable-x264' '--enable-x265' '--enable-zvbi' '--with-kde-solid=/usr/share/solid/actions/' '--disable-aom' '--disable-crystalhd' '--disable-d3d11va' '--disable-decklink' '--disable-directx' '--disable-dsm' '--disable-dxva2' '--disable-fdkaac' '--disable-fluidlite' '--disable-freerdp' '--disable-goom' '--disable-gst-decode' '--disable-libtar' '--disable-live555' '--disable-macosx' '--disable-macosx-avfoundation' '--disable-macosx-qtkit' '--disable-mfx' '--disable-microdns' '--disable-opencv' '--disable-projectm' '--disable-schroedinger' '--disable-sparkle' '--disable-srt' '--disable-telx' '--disable-vpx' '--disable-vsxu' '--disable-wasapi' '--enable-alsa' '--enable-dc1394' '--enable-dv1394' '--enable-libplacebo' '--enable-linsys' '--enable-nfs' '--enable-udev' '--enable-v4l2' '--enable-wayland' '--enable-libva' '--enable-vcd' '--enable-smbclient' '--disable-oss' '--enable-mmx' '--enable-sse' '--disable-neon' '--disable-altivec' '--disable-omxil' 'build_alias=x86_64-linux-gnu' 'CFLAGS=-g -O2 -ffile-prefix-map=/build/vlc-hoXXw1/vlc-3.0.16=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security ' 'LDFLAGS=-Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -Wl,-z,now' 'CPPFLAGS=-Wdate-time -D_FORTIFY_SOURCE=2' 'CXXFLAGS=-g -O2 -ffile-prefix-map=/build/vlc-hoXXw1/vlc-3.0.16=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security ' 'OBJCFLAGS=-g -O2 -ffile-prefix-map=/build/vlc-hoXXw1/vlc-3.0.16=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security'
+[000055b9aa834640] main libvlc debug: searching plug-in modules
+[000055b9aa834640] main libvlc debug: loading plugins cache file /usr/lib/x86_64-linux-gnu/vlc/plugins/plugins.dat
+[000055b9aa834640] main libvlc debug: recursively browsing `/usr/lib/x86_64-linux-gnu/vlc/plugins'
+[000055b9aa834640] main libvlc debug: plug-ins loaded: 519 modules
+[000055b9aa834640] main libvlc debug: opening config file (/home/user/.config/vlc/vlcrc)
+[000055b9aa834990] main logger debug: looking for logger module matching "any": 4 candidates
+[000055b9aa834990] main logger debug: using logger module "console"
+[000055b9aa834640] main libvlc debug: translation test: code is "C"
+[000055b9aa8cf2d0] main keystore debug: looking for keystore module matching "memory": 4 candidates
+[000055b9aa8cf2d0] main keystore debug: using keystore module "memory"
+[000055b9aa834640] main libvlc debug: CPU has capabilities MMX MMXEXT SSE SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 FPU 
+[000055b9aa8d7ad0] main input debug: Creating an input for 'Media Library'
+[000055b9aa8d7ad0] main input debug: Input is a meta file: disabling unneeded options
+[000055b9aa8d7ad0] main input debug: using timeshift granularity of 50 MiB
+[000055b9aa8d7ad0] main input debug: using default timeshift path
+[000055b9aa8d7ad0] main input debug: `file/directory:///home/user/.local/share/vlc/ml.xspf' gives access `file' demux `directory' path `/home/user/.local/share/vlc/ml.xspf'
+[000055b9aa8cf6e0] main input source debug: creating demux: access='file' demux='directory' location='/home/user/.local/share/vlc/ml.xspf' file='/home/user/.local/share/vlc/ml.xspf'
+[000055b9aa8cd040] main demux debug: looking for access_demux module matching "file": 18 candidates
+[000055b9aa8cd040] main demux debug: no access_demux modules matched
+[000055b9aa8cd770] main stream debug: creating access: file:///home/user/.local/share/vlc/ml.xspf
+[000055b9aa8cd770] main stream debug:  (path: /home/user/.local/share/vlc/ml.xspf)
+[000055b9aa8cd770] main stream debug: looking for access module matching "file": 29 candidates
+[000055b9aa8cd770] main stream debug: using access module "filesystem"
+[000055b9aa8f9400] main stream debug: looking for stream_filter module matching "prefetch,cache_read": 26 candidates
+[000055b9aa8f9400] cache_read stream debug: Using stream method for AStream*
+[000055b9aa8f9400] cache_read stream debug: starting pre-buffering
+[000055b9aa8f9400] cache_read stream debug: received first data after 0 ms
+[000055b9aa8f9400] cache_read stream debug: pre-buffering done 296 bytes in 0s - 10706 KiB/s
+[000055b9aa8f9400] main stream debug: using stream_filter module "cache_read"
+[000055b9aa8fa370] main stream debug: looking for stream_filter module matching "any": 26 candidates
+[000055b9aa8fa370] playlist stream debug: using XSPF playlist reader
+[000055b9aa8fa370] main stream debug: using stream_filter module "playlist"
+[000055b9aa8fa370] main stream debug: stream filter added to 0x55b9aa8f9400
+[000055b9aa8fd8c0] main stream debug: looking for stream_filter module matching "any": 26 candidates
+[000055b9aa8fd8c0] main stream debug: no stream_filter modules matched
+[000055b9aa8cce70] main stream_directory debug: looking for stream_directory module matching "any": 1 candidates
+[000055b9aa8cce70] main stream_directory debug: no stream_directory modules matched
+[000055b9aa8cf6e0] main input source debug: attachment of directory-extractor failed for file:///home/user/.local/share/vlc/ml.xspf
+[000055b9aa8fd8c0] main stream debug: looking for stream_filter module matching "record": 26 candidates
+[000055b9aa8fd8c0] main stream debug: using stream_filter module "record"
+[000055b9aa8cf6e0] main input source debug: creating demux: access='file' demux='directory' location='/home/user/.local/share/vlc/ml.xspf' file='/home/user/.local/share/vlc/ml.xspf'
+[000055b9aa8cd040] main demux debug: looking for demux module matching "directory": 54 candidates
+[000055b9aa8cd040] main demux debug: using demux module "directory"
+[000055b9aa8cf150] main demux meta debug: looking for meta reader module matching "any": 2 candidates
+[000055b9aa8cf150] lua demux meta debug: Trying Lua scripts in /home/user/.local/share/vlc/lua/meta/reader
+[000055b9aa8cf150] lua demux meta debug: Trying Lua scripts in /usr/lib/x86_64-linux-gnu/vlc/lua/meta/reader
+[000055b9aa8cf150] lua demux meta debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/reader/filename.luac
+[000055b9aa8cf150] lua demux meta debug: Trying Lua scripts in /usr/share/vlc/lua/meta/reader
+[000055b9aa8cf150] main demux meta debug: no meta reader modules matched
+[000055b9aa8d7ad0] main input debug: `file/directory:///home/user/.local/share/vlc/ml.xspf' successfully opened
+[000055b9aa9070e0] main xml reader debug: looking for xml reader module matching "any": 1 candidates
+[000055b9aa9070e0] main xml reader debug: using xml reader module "xml"
+[000055b9aa8d7ad0] main input debug: EOF reached
+[000055b9aa8cd040] main demux debug: removing module "directory"
+[000055b9aa8fd8c0] main stream debug: removing module "record"
+[000055b9aa8fa370] main stream debug: removing module "playlist"
+[000055b9aa8f9400] main stream debug: removing module "cache_read"
+[000055b9aa8cd770] main stream debug: removing module "filesystem"
+[000055b9aa8d5200] main playlist debug: creating audio output
+[000055b9aa905be0] main audio output debug: looking for audio output module matching "any": 6 candidates
+[000055b9aa905be0] vlcpulse audio output debug: using library version 15.99.0
+[000055b9aa905be0] vlcpulse audio output debug:  (compiled with version 15.99.0, protocol 35)
+[000055b9aa905be0] vlcpulse audio output debug: connected locally to /run/user/1000/pulse/native as client #25
+[000055b9aa905be0] vlcpulse audio output debug: using protocol 35, server protocol 35
+[000055b9aa905be0] pulse audio output debug: adding sink 0: alsa_output.pci-0000_00_1f.3.analog-stereo (Built-in Audio Analog Stereo)
+[000055b9aa905be0] main audio output debug: using audio output module "pulse"
+[000055b9aa8d5200] main playlist debug: keeping audio output
+[000055b9aa8cc680] main interface debug: looking for interface module matching "dbus,none": 19 candidates
+[000055b9aa8cc680] dbus interface debug: listening on dbus as: org.mpris.MediaPlayer2.vlc
+[000055b9aa8cc680] main interface debug: using interface module "dbus"
+[000055b9aa9194d0] main interface debug: looking for interface module matching "hotkeys,none": 19 candidates
+[000055b9aa9194d0] main interface debug: using interface module "hotkeys"
+[000055b9aa919e50] main interface debug: looking for interface module matching "globalhotkeys,none": 19 candidates
+[000055b9aa919e50] main interface debug: using interface module "xcb_hotkeys"
+[000055b9aa91ad10] main interface debug: looking for interface module matching "dummy": 19 candidates
+[000055b9aa91ad10] dummy interface: using the dummy interface module...
+[000055b9aa91ad10] main interface debug: using interface module "dummy"
+[000055b9aa8cc680] dbus interface debug: Getting All properties
+[000055b9aa8d5200] main playlist debug: processing request item: null, node: Playlist, skip: 0
+[000055b9aa8d5200] main playlist debug: rebuilding array of current - root Playlist
+[000055b9aa8d5200] main playlist debug: rebuild done - 2 items, index -1
+[000055b9aa8d5200] main playlist debug: starting playback of new item
+[000055b9aa8d5200] main playlist debug: resyncing on rtp://239.128.1.207:5001
+[000055b9aa8d5200] main playlist debug: rtp://239.128.1.207:5001 is at 0
+[000055b9aa8d5200] main playlist debug: creating new input thread
+[00007f5a0c000c90] main input debug: Creating an input for 'rtp://239.128.1.207:5001'
+[000055b9aa8d5200] main playlist debug: requesting art for new input thread
+[00007f5a0c000c90] main input debug: using timeshift granularity of 50 MiB
+[00007f5a0c000c90] main input debug: using default timeshift path
+[00007f5a0c000c90] main input debug: `rtp://@239.128.1.207:5001' gives access `rtp' demux `any' path `@239.128.1.207:5001'
+[00007f59f8000c30] main meta fetcher debug: looking for meta fetcher module matching "any": 1 candidates
+[00007f59f8000c30] lua meta fetcher debug: Trying Lua scripts in /home/user/.local/share/vlc/lua/meta/fetcher
+[00007f59f8000c30] lua meta fetcher debug: Trying Lua scripts in /usr/lib/x86_64-linux-gnu/vlc/lua/meta/fetcher
+[00007f59f8000c30] lua meta fetcher debug: Trying Lua scripts in /usr/share/vlc/lua/meta/fetcher
+[00007f59f8000c30] main meta fetcher debug: no meta fetcher modules matched
+[00007f59f8000c30] main art finder debug: looking for art finder module matching "any": 2 candidates
+[00007f59f8000c30] lua art finder debug: Trying Lua scripts in /home/user/.local/share/vlc/lua/meta/art
+[00007f59f8000c30] lua art finder debug: Trying Lua scripts in /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art
+[00007f59f8000c30] lua art finder debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/00_musicbrainz.luac
+[00007f59f8000c30] lua art finder debug: skipping script (unmatched scope) /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/00_musicbrainz.luac
+[00007f59f8000c30] lua art finder debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/01_googleimage.luac
+[00007f59f8000c30] lua art finder debug: skipping script (unmatched scope) /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/01_googleimage.luac
+[00007f59f8000c30] lua art finder debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/02_frenchtv.luac
+[00007f59f8000c30] lua art finder debug: skipping script (unmatched scope) /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/02_frenchtv.luac
+[00007f59f8000c30] lua art finder debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/03_lastfm.luac
+[000055b9aa8cc680] dbus interface debug: Getting All properties
+[00007f59f8000c30] lua art finder debug: skipping script (unmatched scope) /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/03_lastfm.luac
+[00007f59f8000c30] lua art finder debug: Trying Lua scripts in /usr/share/vlc/lua/meta/art
+[00007f59f8000c30] main art finder debug: no art finder modules matched
+[00007f5a00000fb0] main input source debug: creating demux: access='rtp' demux='any' location='@239.128.1.207:5001' file='(null)'
+[00007f5a00001140] main demux debug: looking for access_demux module matching "rtp": 18 candidates
+[00007f5a00001140] main demux debug: net: opening 239.128.1.207 datagram port 5001
+[000055b9aa8cc680] dbus interface debug: Getting All properties
+[00007f5a00001140] main demux debug: using access_demux module "rtp"
+[00007f5a000026b0] main demux meta debug: looking for meta reader module matching "any": 2 candidates
+[00007f5a000026b0] lua demux meta debug: Trying Lua scripts in /home/user/.local/share/vlc/lua/meta/reader
+[00007f5a000026b0] lua demux meta debug: Trying Lua scripts in /usr/lib/x86_64-linux-gnu/vlc/lua/meta/reader
+[00007f5a000026b0] lua demux meta debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/reader/filename.luac
+[00007f5a000026b0] lua demux meta debug: Trying Lua scripts in /usr/share/vlc/lua/meta/reader
+[00007f5a000026b0] main demux meta debug: no meta reader modules matched
+[00007f5a0c000c90] main input debug: `rtp://@239.128.1.207:5001' successfully opened
+[00007f5a00001140] rtp demux debug: detected MPEG2 TS
+[00007f5a00001140] rtp demux debug: added payload type 33 (f = 90000 Hz)
+[00007f5a00001140] rtp demux debug: added RTP source (00004ed5)
+[00007f59f8001c80] main stream debug: creating demux: access='' demux='ts' location='' file='(null)'
+[00007f59fc000c30] main demux debug: looking for demux module matching "ts": 54 candidates
+[00007f59fc000c30] ts demux debug: Standard set to Auto
+[00007f59fc000c30] main demux debug: using demux module "ts"
+[00007f59fc000c30] ts demux debug: DEMUX_SET_GROUP -1 (nil)
+[00007f59fc000c30] ts demux debug: pid[1001] unknown
+[00007f59fc000c30] ts demux debug: first packet for pid=1001 cc=0x8
+[00007f59fc000c30] ts demux debug: first packet for pid=0 cc=0x7
+[00007f59fc000c30] ts demux debug: PATCallBack called
+[00007f59fc000c30] ts demux debug: new PAT ts_id=195 version=2 current_next=1
+[00007f59fc000c30] ts demux debug:   * number=1 pid=1000
+[00007f59fc000c30] ts demux debug: temporary receiving program 1
+[00007f59fc000c30] ts demux debug: first packet for pid=1000 cc=0xf
+[00007f59fc000c30] ts demux debug: PMTCallBack called for program 1
+[00007f59fc000c30] ts demux debug: new PMT program number=1 version=2 pid_pcr=1001
+[00007f59fc000c30] ts demux debug:   * pid=1001 type=0x1b AVC video stream as defined in ITU-T Rec. H.264
+[00007f59fc000c30] ts demux debug:     - ES descriptor tag 0x2a
+[00007f59fc000c30] ts demux debug:    =&gt; pid 1001 has now es fcc=h264
+[00007f5a0c000c90] main input debug: selecting program id=1
+[00007f59fc006870] main packetizer debug: looking for packetizer module matching "any": 25 candidates
+[00007f59fc006870] main packetizer debug: using packetizer module "h264"
+[00007f59fc005fe0] main decoder debug: looking for video decoder module matching "any": 15 candidates
+[00007f59fc005fe0] avcodec decoder debug: using ffmpeg Lavc58.134.100
+[00007f59fc005fe0] avcodec decoder debug: CPU flags: 0x000fd3db
+[00007f59fc005fe0] avcodec decoder debug: allowing 5 thread(s) for decoding
+[00007f59fc005fe0] avcodec decoder debug: codec (h264) started
+[00007f59fc005fe0] avcodec decoder debug: using frame thread mode with 5 threads
+[00007f59fc005fe0] main decoder debug: using video decoder module "avcodec"
+[00007f59fc000c30] ts demux debug: Default program is 1
+[00007f59fc000c30] ts demux debug:   * pid=1004 type=0x3 ISO/IEC 11172 Audio
+[00007f59fc000c30] ts demux debug:     - ES descriptor tag 0xa
+[00007f59fc000c30] ts demux debug:       found language: por
+[00007f59fc000c30] ts demux debug:    =&gt; pid 1004 has now es fcc=mpga
+[00007f59fc0de010] main packetizer debug: looking for packetizer module matching "any": 25 candidates
+[00007f59fc0de010] main packetizer debug: using packetizer module "mpegaudio"
+[00007f59fc0dd780] main decoder debug: looking for audio decoder module matching "any": 20 candidates
+[00007f59fc0dd780] mpg123 decoder debug: mpga-&gt;f32l, bits per sample: 32
+[00007f59fc0dd780] main decoder debug: using audio decoder module "mpg123"
+[00007f59fc000c30] ts demux debug:   * pid=1005 type=0x3 ISO/IEC 11172 Audio
+[00007f59fc000c30] ts demux debug:     - ES descriptor tag 0xa
+[00007f59fc000c30] ts demux debug:       found language: org
+[00007f59fc000c30] ts demux debug:    =&gt; pid 1005 has now es fcc=mpga
+[00007f59fc000c30] ts demux debug:   * pid=17 listening for SDT
+[00007f59fc000c30] ts demux debug: enabling pid 1001 from program 1
+[00007f59fc000c30] ts demux debug: enabling pid 1004 from program 1
+[00007f59fc000c30] ts demux debug: enabling pid 1005 from program 1
+[00007f59fc000c30] ts demux debug: enabling pcr pid 1001 from program 1
+[00007f5a0c000c90] main input debug: Buffering 0%
+[00007f59fc000c30] ts demux debug: first packet for pid=1001 cc=0x1
+[00007f59fc000c30] ts demux debug: first packet for pid=1004 cc=0xf
+[00007f59fc000c30] ts demux debug: first packet for pid=1005 cc=0xf
+[00007f5a0c000c90] main input debug: Buffering 3%
+[00007f5a0c000c90] main input debug: Buffering 5%
+[00007f59fc0de010] mpegaudio packetizer debug: MPGA channels:2 samplerate:48000 bitrate:128
+[00007f59fc0dd780] main decoder debug: restarting module due to input format change
+[00007f59fc0dd780] main decoder debug: removing module "mpg123"
+[00007f59fc0dd780] main decoder debug: looking for audio decoder module matching "any": 20 candidates
+[00007f59fc0dd780] mpg123 decoder debug: mpga-&gt;f32l, bits per sample: 32
+[00007f59fc0dd780] main decoder debug: using audio decoder module "mpg123"
+[00007f5a0c000c90] main input debug: Buffering 9%
+[000055b9aa8d5200] main playlist debug: reusing audio output
+[000055b9aa905be0] pulse audio output debug: using stereo channel map
+[00007f5a0c000c90] main input debug: Buffering 12%
+[00007f5a0c000c90] main input debug: Buffering 15%
+[00007f59fc006870] h264 packetizer debug: found NAL_SPS (sps_id=0)
+[00007f59fc006870] h264 packetizer debug: found NAL_PPS (pps_id=0 sps_id=0)
+[00007f5a0c000c90] main input debug: Buffering 18%
+[000055b9aa905be0] pulse audio output debug: changed buffer metrics: maxlength=4194304, tlength=46080, prebuf=0, minreq=15360
+[000055b9aa905be0] pulse audio output debug: connected to sink alsa_output.pci-0000_00_1f.3.analog-stereo
+[000055b9aa905be0] main audio output debug: output 'f32l' 48000 Hz Stereo frame=1 samples/8 bytes
+[00007f59ec011530] main volume debug: looking for audio volume module matching "any": 2 candidates
+[00007f59ec011530] main volume debug: using audio volume module "float_mixer"
+[000055b9aa905be0] main audio output debug: input 'f32l' 48000 Hz Stereo frame=1 samples/8 bytes
+[000055b9aa905be0] pulse audio output debug: changing sink 0: alsa_output.pci-0000_00_1f.3.analog-stereo (Built-in Audio Analog Stereo)
+[00007f59ec015f60] main audio filter debug: looking for audio filter module matching "scaletempo": 16 candidates
+[00007f59ec015f60] scaletempo audio filter debug: format: 48000 rate, 2 nch, 4 bps, fl32
+[00007f59ec015f60] scaletempo audio filter debug: params: 30 stride, 0,200 overlap, 14 search
+[00007f59ec015f60] scaletempo audio filter debug: 1,000 scale, 1440,000 stride_in, 1440 stride_out, 1152 standing, 288 overlap, 672 search, 2400 queue, fl32 mode
+[00007f59ec015f60] main audio filter debug: using audio filter module "scaletempo"
+[000055b9aa905be0] main audio output debug: conversion: 'f32l'-&gt;'f32l' 48000 Hz-&gt;48000 Hz Stereo-&gt;Stereo
+[000055b9aa905be0] main audio output debug: conversion pipeline complete
+[000055b9aa905be0] main audio output debug: conversion: 'f32l'-&gt;'f32l' 48000 Hz-&gt;48000 Hz Stereo-&gt;Stereo
+[000055b9aa905be0] main audio output debug: conversion pipeline complete
+[00007f59ec01daa0] main audio resampler debug: looking for audio resampler module matching "any": 4 candidates
+[00007f59ec01daa0] main audio resampler debug: using audio resampler module "samplerate"
+[00007f59fc005fe0] main decoder debug: restarting module due to input format change
+[00007f59fc005fe0] main decoder debug: removing module "avcodec"
+[00007f59fc005fe0] main decoder debug: looking for video decoder module matching "any": 15 candidates
+[00007f59fc005fe0] avcodec decoder debug: using ffmpeg Lavc58.134.100
+[00007f59fc005fe0] avcodec decoder debug: CPU flags: 0x000fd3db
+[00007f59fc005fe0] avcodec decoder debug: allowing 5 thread(s) for decoding
+[h264 @ 0x7f59e4005100] nal_unit_type: 7(SPS), nal_ref_idc: 1
+[h264 @ 0x7f59e4005100] nal_unit_type: 8(PPS), nal_ref_idc: 1
+[00007f59fc005fe0] avcodec decoder debug: codec (h264) started
+[00007f59fc005fe0] avcodec decoder debug: using frame thread mode with 5 threads
+[00007f59fc005fe0] main decoder debug: using video decoder module "avcodec"
+[h264 @ 0x7f59e4005100] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 7(SPS), nal_ref_idc: 1
+[h264 @ 0x7f59e4005100] nal_unit_type: 8(PPS), nal_ref_idc: 1
+[h264 @ 0x7f59e4005100] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 5(IDR), nal_ref_idc: 1
+[00007f59fc005fe0] avcodec decoder debug: available hardware decoder output format 100 (vdpau)
+[00007f59fc005fe0] avcodec decoder debug: available hardware decoder output format 119 (cuda)
+[00007f59fc005fe0] avcodec decoder debug: available hardware decoder output format 46 (vaapi_vld)
+[00007f59fc005fe0] avcodec decoder debug: available software decoder output format 12 (yuvj420p)
+[00007f59fc005fe0] avcodec decoder debug: trying format vaapi_vld
+[00007f59e8082fb0] main spu text debug: looking for text renderer module matching "any": 2 candidates
+[00007f59e8082fb0] freetype spu text debug: Building font databases.
+[00007f5a0c000c90] main input debug: Buffering 21%
+[00007f59e8082fb0] freetype spu text debug: Took -12266 microseconds
+[00007f59e8082fb0] main spu text debug: using text renderer module "freetype"
+[00007f59e809ea40] main scale debug: looking for video converter module matching "any": 23 candidates
+[swscaler @ 0x7f59e80f4e00] Forcing full internal H chroma due to input having non subsampled chroma
+[00007f59e809ea40] swscale scale debug: 32x32 (32x32) chroma: YUVA -&gt; 16x16 (16x16) chroma: RGBA with scaling using Bicubic (good quality)
+[00007f59e809ea40] main scale debug: using video converter module "swscale"
+[00007f59e80e39b0] main scale debug: looking for video converter module matching "any": 23 candidates
+[00007f59e80e39b0] yuvp scale debug: YUVP to YUVA converter
+[00007f59e80e39b0] main scale debug: using video converter module "yuvp"
+[00007f59e8054f20] main video output debug: Deinterlacing available
+[00007f59e8054f20] main video output debug: deinterlace -1, mode auto, is_needed 0
+[00007f59e80c2c60] main window debug: looking for vout window module matching "any": 6 candidates
+[00007f59e80c2c60] main window debug: resized to 1024x576
+[00007f59e80c2c60] main window debug: using vout window module "xcb_window"
+[00007f59e80cb6b0] main inhibit debug: looking for inhibit module matching "any": 2 candidates
+[00007f59e80cb6b0] dbus_screensaver inhibit debug: found service org.freedesktop.ScreenSaver
+[00007f59e80cb6b0] main inhibit debug: using inhibit module "dbus_screensaver"
+[00007f59e80c2c60] xcb_window window debug: unhandled event 21
+[00007f59e8054f20] main video output debug: Opening vout display wrapper
+[00007f59e00013c0] main vout display debug: looking for vout display module matching "any": 14 candidates
+[00007f5a0c000c90] main input debug: Buffering 24%
+[00007f59e00013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007f59e0004e90] main gl debug: looking for opengl module matching "any": 3 candidates
+[00007f59e80c2c60] main window debug: resized to 1024x576
+[00007f59e00013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007f59e80c2c60] main window debug: resized to 1024x576
+[00007f59e00013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007f59e0004e90] egl_x11 gl debug: EGL version 1.5 by Mesa Project
+[00007f59e0004e90] egl_x11 gl debug:  extensions: EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_CHROMIUM_sync_control EGL_EXT_buffer_age EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_swap_buffers_with_damage EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_KHR_swap_buffers_with_damage EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_drm_image EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_NOK_texture_from_pixmap EGL_WL_bind_wayland_display 
+[00007f59e80c2c60] main window debug: resized to 1024x576
+[00007f59e00013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007f5a0c000c90] main input debug: Buffering 27%
+[00007f59e80c2c60] xcb_window window debug: unhandled event 19
+[00007f59e0004e90] main gl debug: using opengl module "egl_x11"
+[00007f59e0004e90] gl gl: Initialized libplacebo v4.192.1 (API v192)
+[00007f59e018c020] main generic debug: looking for glconv module matching "any": 4 candidates
+libva info: VA-API version 1.14.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_14
+libva info: va_openDriver() returns 0
+[00007f59e018c020] main generic debug: using glconv module "glconv_vaapi_x11"
+[00007f59e00013c0] main vout display debug: using vout display module "gl"
+[00007f59e8054f20] main video output debug: original format sz 1024x576, of (0,0), vsz 1024x576, 4cc VAOP, sar 1:1, msk r0x0 g0x0 b0x0
+[00007f59e8054f20] main video output debug: Adding 'scene' as interactive
+[00007f59e089d3c0] main filter debug: looking for video filter module matching "scene,chain": 50 candidates
+[00007f59e089d3c0] chain filter debug: Trying to use chroma I420 as middle man
+[00007f59e08ba4c0] main filter debug: looking for video converter module matching "any": 23 candidates
+[00007f59e08ba4c0] vaapi_filters filter warning: Using SW chroma filter for 1024x576 VAOP -&gt; I420
+[00007f59e08ba4c0] main filter debug: using video converter module "vaapi_filters"
+[00007f59e089d3c0] main filter debug: Filter 'VAAPI filters' (0x7f59e08ba4c0) appended to chain
+[00007f59e08fd960] main filter debug: looking for video filter module matching "scene,chain": 50 candidates
+[00007f59e08fd960] main filter debug: using video filter module "scene"
+[00007f59e089d3c0] main filter debug: Filter 'scene' (0x7f59e08fd960) appended to chain
+[00007f59e089d3c0] main filter debug: using video filter module "chain"
+[00007f59e8054f20] main video output debug: Filter 'scene' (0x7f59e089d3c0) appended to chain
+[00007f59e8054f20] main video output debug: Adding a filter to compensate for format changes
+[00007f59e08feaa0] main filter debug: looking for video converter module matching "any": 23 candidates
+[00007f59e08feaa0] vaapi_filters filter warning: Using SW chroma filter for 1024x576 I420 -&gt; VAOP
+[00007f59e08feaa0] main filter debug: using video converter module "vaapi_filters"
+[00007f59e8054f20] main video output debug: Filter 'VAAPI filters' (0x7f59e08feaa0) appended to chain
+[00007f59e089d3c0] main filter debug: removing module "chain"
+[00007f59e08ba4c0] main filter debug: removing module "vaapi_filters"
+[00007f59e089d3c0] main filter debug: Filter 0x7f59e08ba4c0 removed from chain
+[00007f59e08fd960] main filter debug: removing module "scene"
+[00007f59e089d3c0] main filter debug: Filter 0x7f59e08fd960 removed from chain
+[00007f59e8054f20] main video output debug: Filter 0x7f59e089d3c0 removed from chain
+[00007f59e08feaa0] main filter debug: removing module "vaapi_filters"
+[00007f59e8054f20] main video output debug: Filter 0x7f59e08feaa0 removed from chain
+[00007f59e8054f20] main video output debug: Adding 'scene' as interactive
+[00007f59e08feaa0] main filter debug: looking for video filter module matching "scene,chain": 50 candidates
+[00007f59e08feaa0] chain filter debug: Trying to use chroma I420 as middle man
+[00007f59e089d3c0] main filter debug: looking for video converter module matching "any": 23 candidates
+[00007f59e089d3c0] vaapi_filters filter warning: Using SW chroma filter for 1024x576 VAOP -&gt; I420
+[00007f59e089d3c0] main filter debug: using video converter module "vaapi_filters"
+[00007f59e08feaa0] main filter debug: Filter 'VAAPI filters' (0x7f59e089d3c0) appended to chain
+[00007f59e08fd960] main filter debug: looking for video filter module matching "scene,chain": 50 candidates
+[00007f59e08fd960] main filter debug: using video filter module "scene"
+[00007f59e08feaa0] main filter debug: Filter 'scene' (0x7f59e08fd960) appended to chain
+[00007f59e08feaa0] main filter debug: using video filter module "chain"
+[00007f59e8054f20] main video output debug: Filter 'scene' (0x7f59e08feaa0) appended to chain
+[00007f59e8054f20] main video output debug: Adding a filter to compensate for format changes
+[00007f59e08ba4c0] main filter debug: looking for video converter module matching "any": 23 candidates
+[00007f59e08ba4c0] vaapi_filters filter warning: Using SW chroma filter for 1024x576 I420 -&gt; VAOP
+[00007f59e08ba4c0] main filter debug: using video converter module "vaapi_filters"
+[00007f59e8054f20] main video output debug: Filter 'VAAPI filters' (0x7f59e08ba4c0) appended to chain
+[00007f59e8082fb0] main spu text debug: removing module "freetype"
+[00007f59e8082fb0] main spu text debug: looking for text renderer module matching "any": 2 candidates
+[00007f59e8082fb0] freetype spu text debug: Building font databases.
+[00007f59e80c2c60] main window debug: resized to 1024x576
+[00007f59e00013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007f5a0c000c90] main input debug: Buffering 30%
+[00007f59e8082fb0] freetype spu text debug: Took -9968 microseconds
+[00007f59e8082fb0] main spu text debug: using text renderer module "freetype"
+[00007f59e80da0f0] main generic debug: looking for hw decoder module matching "any": 3 candidates
+[00007f59e80da0f0] main generic debug: using hw decoder module "vaapi"
+[00007f59fc005fe0] avcodec decoder: Using Intel iHD driver for Intel(R) Gen Graphics - 22.3.1 () for hardware decoding
+[h264 @ 0x7f59e4005100] Format vaapi_vld chosen by get_format().
+[h264 @ 0x7f59e4005100] Format vaapi_vld requires hwaccel initialisation.
+[h264 @ 0x7f59e4005100] Using deprecated struct vaapi_context in decode.
+[h264 @ 0x7f59e4005100] Using user-supplied decoder context: 0x4/0x10000000.
+[h264 @ 0x7f59e4005100] Reinit context to 1024x576, pix_fmt: vaapi_vld
+[h264 @ 0x7f59e4005100] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4005100] no picture 
+[h264 @ 0x7f59e4005100] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7f59e4005100] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4005100] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7f59e4005100] Slice 0 data buffer (39565 bytes) is 0x3.
+[h264 @ 0x7f59e4005100] Decode to surface 0x4.
+[h264 @ 0x7f59e4064b80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4064b80] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4064b80] no picture 
+[h264 @ 0x7f59e4064b80] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4064b80] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7f59e4064b80] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e4064b80] Slice 0 data buffer (7922 bytes) is 0.
+[h264 @ 0x7f59e4064b80] Decode to surface 0x5.
+[h264 @ 0x7f59e4081540] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4081540] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4081540] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7f59e4081540] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4081540] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7f59e4081540] Slice 0 data buffer (1213 bytes) is 0x3.
+[h264 @ 0x7f59e4081540] Decode to surface 0x6.
+[h264 @ 0x7f59e409e040] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e409e040] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e409e040] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7f59e409e040] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e409e040] Slice 0 data buffer (1569 bytes) is 0.
+[h264 @ 0x7f59e409e040] Decode to surface 0x7.
+[h264 @ 0x7f59e40bab00] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e40bab00] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e40bab00] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7f59e40bab00] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e40bab00] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7f59e40bab00] Slice 0 data buffer (20259 bytes) is 0x3.
+[h264 @ 0x7f59e40bab00] Decode to surface 0x8.
+[h264 @ 0x7f59e4005100] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[00007f5a0c000c90] main input debug: Buffering 33%
+[00007f5a0c000c90] main input debug: Buffering 36%
+[h264 @ 0x7f59e4005100] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4005100] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4005100] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7f59e4005100] Slice 0 param buffer (3128 bytes) is 0x1.
+[00007f59fc005fe0] main decoder debug: Received first picture
+[h264 @ 0x7f59e4005100] Slice 0 data buffer (2006 bytes) is 0.
+[h264 @ 0x7f59e4005100] [00007f59e08fd960] main filter error: /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00001.jpg.swp: No such file or directory
+[00007f59e08fd960] scene filter error: could not create snapshot /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00001.jpg.swp
+Decode to surface 0x9.
+[h264 @ 0x7f59e4064b80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4064b80] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7f59e4064b80] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4064b80] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7f59e4064b80] Slice 0 data buffer (1788 bytes) is 0x3.
+[h264 @ 0x7f59e4064b80] Decode to surface 0xa.
+[h264 @ 0x7f59e4081540] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[00007f5a0c000c90] main input debug: Buffering 39%
+[00007f5a0c000c90] main input debug: Buffering 42%
+[00007f5a0c000c90] main input debug: Buffering 45%
+[00007f5a0c000c90] main input debug: Buffering 48%
+[00007f5a0c000c90] main input debug: Buffering 51%
+[00007f5a0c000c90] main input debug: Buffering 54%
+[00007f5a0c000c90] main input debug: Buffering 57%
+[00007f5a0c000c90] main input debug: Buffering 60%
+[00007f5a0c000c90] main input debug: Buffering 63%
+[00007f5a0c000c90] main input debug: Buffering 66%
+[00007f5a0c000c90] main input debug: Buffering 69%
+[00007f5a0c000c90] main input debug: Buffering 72%
+[00007f5a0c000c90] main input debug: Buffering 75%
+[00007f5a0c000c90] main input debug: Buffering 78%
+[00007f5a0c000c90] main input debug: Buffering 81%
+[00007f5a0c000c90] main input debug: Buffering 84%
+[00007f5a0c000c90] main input debug: Buffering 87%
+[00007f5a0c000c90] main input debug: Buffering 90%
+[00007f5a0c000c90] main input debug: Buffering 93%
+[00007f5a0c000c90] main input debug: Buffering 96%
+[00007f5a0c000c90] main input debug: Buffering 99%
+[00007f5a0c000c90] main input debug: Stream buffering done (1025 ms in 1000 ms)
+[00007f5a0c000c90] main input debug: Decoder wait done in 0 ms
+[h264 @ 0x7f59e4081540] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4081540] Param buffer (type 0, 672 bytes) is 0x1.
+[h264 @ 0x7f59e4081540] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e4081540] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7f59e4081540] Slice 0 data buffer (13433 bytes) is 0x5.
+[h264 @ 0x7f59e4081540] Decode to surface 0xb.
+[000055b9aa905be0] pulse audio output debug: deferring start (940982 us)
+[000055b9aa905be0] pulse audio output debug: deferring start (917399 us)
+[h264 @ 0x7f59e409e040] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e409e040] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e409e040] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e409e040] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e409e040] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e409e040] Slice 0 data buffer (1073 bytes) is 0x3.
+[h264 @ 0x7f59e409e040] Decode to surface 0xc.
+[000055b9aa905be0] pulse audio output debug: deferring start (893398 us)
+[h264 @ 0x7f59e40bab00] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[000055b9aa905be0] pulse audio output debug: deferring start (869399 us)
+[h264 @ 0x7f59e40bab00] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e40bab00] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e40bab00] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e40bab00] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e40bab00] Slice 0 data buffer (789 bytes) is 0x4.
+[h264 @ 0x7f59e40bab00] Decode to surface 0xd.
+[000055b9aa905be0] pulse audio output debug: deferring start (845399 us)
+[h264 @ 0x7f59e4005100] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4005100] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4005100] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e4005100] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e4005100] Slice 0 param buffer (3128 bytes) is 0x1.
+[000055b9aa905be0] pulse audio output debug: deferring start (821399 us)
+[h264 @ 0x7f59e4005100] Slice 0 data buffer (19029 bytes) is 0x3.
+[h264 @ 0x7f59e4005100] Decode to surface 0xe.
+[000055b9aa905be0] pulse audio output debug: deferring start (797398 us)
+[h264 @ 0x7f59e4064b80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4064b80] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4064b80] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4064b80] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4064b80] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e4064b80] Slice 0 data buffer (1307 bytes) is 0x4.
+[h264 @ 0x7f59e4064b80] Decode to surface 0xf.
+[000055b9aa905be0] pulse audio output debug: deferring start (773399 us)
+[h264 @ 0x7f59e4081540] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4081540] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e4081540] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e4081540] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e4081540] Slice 0 data buffer (933 bytes) is 0x3.
+[h264 @ 0x7f59e4081540] Decode to surface 0x10.
+[000055b9aa905be0] pulse audio output debug: deferring start (749399 us)
+[000055b9aa905be0] pulse audio output debug: deferring start (725396 us)
+[h264 @ 0x7f59e409e040] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e409e040] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e409e040] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e409e040] Param buffer (type 1, 240 bytes) is 0x1.
+[000055b9aa905be0] pulse audio output debug: deferring start (701393 us)
+[h264 @ 0x7f59e409e040] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e409e040] Slice 0 data buffer (20105 bytes) is 0x4.
+[h264 @ 0x7f59e409e040] Decode to surface 0x11.
+[000055b9aa905be0] pulse audio output debug: deferring start (677399 us)
+[h264 @ 0x7f59e40bab00] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e40bab00] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e40bab00] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e40bab00] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e40bab00] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e40bab00] Slice 0 data buffer (432 bytes) is 0x3.
+[h264 @ 0x7f59e40bab00] Decode to surface 0x12.
+[000055b9aa905be0] pulse audio output debug: deferring start (653398 us)
+[h264 @ 0x7f59e4005100] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[000055b9aa905be0] pulse audio output debug: deferring start (629399 us)
+[h264 @ 0x7f59e4005100] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4005100] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4005100] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4005100] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e4005100] Slice 0 data buffer (784 bytes) is 0x4.
+[h264 @ 0x7f59e4005100] Decode to surface 0x13.
+[000055b9aa905be0] pulse audio output debug: deferring start (605399 us)
+[h264 @ 0x7f59e4064b80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[000055b9aa905be0] pulse audio output debug: deferring start (581399 us)
+[h264 @ 0x7f59e4064b80] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4064b80] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e4064b80] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e4064b80] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e4064b80] Slice 0 data buffer (12559 bytes) is 0x3.
+[h264 @ 0x7f59e4064b80] Decode to surface 0x14.
+[000055b9aa905be0] pulse audio output debug: deferring start (557399 us)
+[h264 @ 0x7f59e4081540] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4081540] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4081540] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4081540] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4081540] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e4081540] Slice 0 data buffer (1321 bytes) is 0x4.
+[h264 @ 0x7f59e4081540] Decode to surface 0x15.
+[000055b9aa905be0] pulse audio output debug: deferring start (533399 us)
+[h264 @ 0x7f59e409e040] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[000055b9aa905be0] pulse audio output debug: deferring start (509399 us)
+[h264 @ 0x7f59e409e040] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e409e040] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e409e040] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e409e040] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e409e040] Slice 0 data buffer (978 bytes) is 0x3.
+[h264 @ 0x7f59e409e040] Decode to surface 0x16.
+[000055b9aa905be0] pulse audio output debug: deferring start (485399 us)
+[h264 @ 0x7f59e40bab00] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e40bab00] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e40bab00] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e40bab00] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e40bab00] Slice 0 param buffer (3128 bytes) is 0.
+[000055b9aa905be0] pulse audio output debug: deferring start (461400 us)
+[h264 @ 0x7f59e40bab00] Slice 0 data buffer (16653 bytes) is 0x4.
+[h264 @ 0x7f59e40bab00] Decode to surface 0x17.
+[000055b9aa905be0] pulse audio output debug: deferring start (437399 us)
+[h264 @ 0x7f59e4005100] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[000055b9aa905be0] pulse audio output debug: deferring start (413400 us)
+[h264 @ 0x7f59e4005100] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4005100] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e4005100] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e4005100] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e4005100] Slice 0 data buffer (292 bytes) is 0x3.
+[h264 @ 0x7f59e4005100] Decode to surface 0x18.
+[000055b9aa905be0] pulse audio output debug: deferring start (389399 us)
+[h264 @ 0x7f59e4064b80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4064b80] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4064b80] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4064b80] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e4064b80] Slice 0 data buffer (838 bytes) is 0x4.
+[h264 @ 0x7f59e4064b80] Decode to surface 0x19.
+[000055b9aa905be0] pulse audio output debug: deferring start (365399 us)
+[h264 @ 0x7f59e4081540] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4081540] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4081540] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e4081540] Param buffer (type 1, 240 bytes) is 0.
+[000055b9aa905be0] pulse audio output debug: deferring start (341399 us)
+[h264 @ 0x7f59e4081540] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e4081540] Slice 0 data buffer (11536 bytes) is 0x3.
+[h264 @ 0x7f59e4081540] Decode to surface 0x1a.
+[000055b9aa905be0] pulse audio output debug: deferring start (317400 us)
+[h264 @ 0x7f59e409e040] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e409e040] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e409e040] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e409e040] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e409e040] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e409e040] Slice 0 data buffer (916 bytes) is 0x4.
+[h264 @ 0x7f59e409e040] Decode to surface 0x1b.
+[000055b9aa905be0] pulse audio output debug: deferring start (293400 us)
+[000055b9aa905be0] pulse audio output debug: deferring start (269400 us)
+[h264 @ 0x7f59e40bab00] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e40bab00] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e40bab00] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e40bab00] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e40bab00] Slice 0 data buffer (991 bytes) is 0x3.
+[h264 @ 0x7f59e40bab00] Decode to surface 0x1c.
+[000055b9aa905be0] pulse audio output debug: deferring start (245399 us)
+[h264 @ 0x7f59e4005100] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[000055b9aa905be0] pulse audio output debug: deferring start (221400 us)
+[h264 @ 0x7f59e4005100] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4005100] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4005100] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4005100] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e4005100] Slice 0 data buffer (14290 bytes) is 0x4.
+[h264 @ 0x7f59e4005100] Decode to surface 0x1d.
+[000055b9aa905be0] pulse audio output debug: deferring start (197399 us)
+[h264 @ 0x7f59e4064b80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4064b80] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4064b80] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e4064b80] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e4064b80] Slice 0 param buffer (3128 bytes) is 0x1.
+[000055b9aa905be0] pulse audio output debug: deferring start (173400 us)
+[h264 @ 0x7f59e4064b80] Slice 0 data buffer (3034 bytes) is 0x3.
+[h264 @ 0x7f59e4064b80] Decode to surface 0x1e.
+[000055b9aa905be0] pulse audio output debug: deferring start (149400 us)
+[h264 @ 0x7f59e4081540] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4081540] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4081540] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4081540] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e4081540] Slice 0 data buffer (4235 bytes) is 0x4.
+[h264 @ 0x7f59e4081540] Decode to surface 0x1f.
+[000055b9aa905be0] pulse audio output debug: deferring start (125400 us)
+[h264 @ 0x7f59e409e040] [000055b9aa905be0] pulse audio output debug: deferring start (101399 us)
+nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e409e040] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e409e040] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e409e040] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e409e040] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e409e040] Slice 0 data buffer (10829 bytes) is 0x3.
+[h264 @ 0x7f59e409e040] Decode to surface 0x20.
+[000055b9aa905be0] pulse audio output debug: deferring start (77400 us)
+[h264 @ 0x7f59e40bab00] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[000055b9aa905be0] pulse audio output debug: deferring start (53399 us)
+[000055b9aa905be0] pulse audio output debug: deferring start (29400 us)
+[000055b9aa905be0] pulse audio output debug: deferring start (5400 us)
+[000055b9aa905be0] pulse audio output warning: starting late (-18600 us)
+[000055b9aa905be0] main audio output warning: playback too early (-42537): down-sampling
+[000055b9aa905be0] pulse audio output debug: started
+[000055b9aa905be0] pulse audio output debug: changing sink 0: alsa_output.pci-0000_00_1f.3.analog-stereo (Built-in Audio Analog Stereo)
+[h264 @ 0x7f59e40bab00] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e40bab00] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7f59e40bab00] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e40bab00] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e40bab00] Slice 0 data buffer (4147 bytes) is 0x4.
+[h264 @ 0x7f59e40bab00] Decode to surface 0x21.
+[h264 @ 0x7f59e4005100] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4005100] Param buffer (type 0, 672 bytes) is 0x4.
+[h264 @ 0x7f59e4005100] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7f59e4005100] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e4005100] Slice 0 data buffer (2759 bytes) is 0x5.
+[h264 @ 0x7f59e4005100] Decode to surface 0x22.
+[h264 @ 0x7f59e4064b80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4064b80] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4064b80] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7f59e4064b80] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4064b80] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7f59e4064b80] Slice 0 data buffer (16542 bytes) is 0x4.
+[h264 @ 0x7f59e4064b80] Decode to surface 0x23.
+[h264 @ 0x7f59e4081540] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[00007f59e00013c0] main vout display debug: auto hiding mouse cursor
+[00007f59fc000c30] ts demux debug: pid[1] unknown
+[00007f59fc000c30] ts demux debug: first packet for pid=1 cc=0x7
+[00007f59fc000c30] ts demux debug: first packet for pid=17 cc=0xf
+[00007f59fc000c30] ts demux debug: SDTCallBack called
+[00007f59fc000c30] ts demux debug:   * pid=18 listening for EIT
+[00007f59fc000c30] ts demux debug:   * pid=20 listening for TDT
+[00007f59fc000c30] ts demux debug: new SDT ts_id=195 version=2 current_next=1 network_id=1
+[00007f59fc000c30] ts demux debug:   * service id=1 eit schedule=0 present=0 running=4 free_ca=0
+[00007f59fc000c30] ts demux debug:     - type=1 provider=Vivo name=HEPNIS - TV Escola
+[00007f5a0c000c90] main input debug: EsOutProgramMeta: number=1
+[00007f59e08fd960] main filter error: /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00025.jpg.swp: No such file or directory
+[00007f59e08fd960] scene filter error: could not create snapshot /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00025.jpg.swp
+[h264 @ 0x7f59e4081540] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4081540] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7f59e4081540] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4081540] Slice 0 param buffer (3128 bytes) is 0x3.
+[h264 @ 0x7f59e4081540] Slice 0 data buffer (5048 bytes) is 0x2.
+[h264 @ 0x7f59e4081540] Decode to surface 0x4.
+[h264 @ 0x7f59e409e040] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e409e040] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7f59e409e040] Param buffer (type 1, 240 bytes) is 0x3.
+[h264 @ 0x7f59e409e040] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e409e040] Slice 0 data buffer (4389 bytes) is 0.
+[h264 @ 0x7f59e409e040] Decode to surface 0x7.
+[h264 @ 0x7f59e40bab00] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e40bab00] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e40bab00] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e40bab00] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7f59e40bab00] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e40bab00] Slice 0 param buffer (3128 bytes) is 0x3.
+[h264 @ 0x7f59e40bab00] Slice 0 data buffer (34666 bytes) is 0x2.
+[h264 @ 0x7f59e40bab00] Decode to surface 0x6.
+[h264 @ 0x7f59e4005100] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4005100] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4005100] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4005100] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7f59e4005100] Param buffer (type 1, 240 bytes) is 0x3.
+[h264 @ 0x7f59e4005100] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e4005100] Slice 0 data buffer (1996 bytes) is 0.
+[h264 @ 0x7f59e4005100] Decode to surface 0x5.
+[h264 @ 0x7f59e4064b80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4064b80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[00007f59e08fd960] main filter error: /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00049.jpg.swp: No such file or directory
+[00007f59e08fd960] scene filter error: could not create snapshot /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00049.jpg.swp
+[h264 @ 0x7f59e4064b80] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4064b80] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7f59e4064b80] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7f59e4064b80] Slice 0 param buffer (3128 bytes) is 0x3.
+[h264 @ 0x7f59e4064b80] Slice 0 data buffer (448 bytes) is 0x2.
+[h264 @ 0x7f59e4064b80] Decode to surface 0xa.
+[h264 @ 0x7f59e4081540] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e4081540] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7f59e4081540] ct_type:0 pic_struct:0
+[h264 @ 0x7f59e4081540] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7f59e4081540] Param buffer (type 1, 240 bytes) is 0x3.
+[h264 @ 0x7f59e4081540] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7f59e4081540] Slice 0 data buffer (18130 bytes) is 0.
+[h264 @ 0x7f59e4081540] Decode to surface 0x9.
+[h264 @ 0x7f59e409e040] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7f59e409e040] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1</msg>
+<status status="PASS" starttime="20221123 18:24:44.691" endtime="20221123 18:24:44.694"/>
+</kw>
+<status status="PASS" starttime="20221123 18:24:39.573" endtime="20221123 18:24:44.695"/>
+</kw>
+<kw name="Check if there is video">
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>grep type\= temp/vlc_reproduction.log</arg>
+<arg>shell=yes</arg>
+<arg>stderr=STDOUT</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20221123 18:24:44.695" level="INFO">Starting process:
+grep type= temp/vlc_reproduction.log</msg>
+<msg timestamp="20221123 18:24:44.698" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20221123 18:24:44.704" level="INFO">Process completed.</msg>
+<msg timestamp="20221123 18:24:44.704" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:44.695" endtime="20221123 18:24:44.704"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221123 18:24:44.706" level="INFO">[00007f59fc000c30] ts demux debug:   * pid=1001 type=0x1b AVC video stream as defined in ITU-T Rec. H.264
+[00007f59fc000c30] ts demux debug:   * pid=1004 type=0x3 ISO/IEC 11172 Audio
+[00007f59fc000c30] ts demux debug:   * pid=1005 type=0x3 ISO/IEC 11172 Audio
+[00007f59fc000c30] ts demux debug:     - type=1 provider=Vivo name=HEPNIS - TV Escola</msg>
+<status status="PASS" starttime="20221123 18:24:44.705" endtime="20221123 18:24:44.706"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20221123 18:24:44.707" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20221123 18:24:44.706" endtime="20221123 18:24:44.707"/>
+</kw>
+<status status="PASS" starttime="20221123 18:24:44.695" endtime="20221123 18:24:44.708"/>
+</kw>
+<tag>multicast</tag>
+<status status="PASS" starttime="20221123 18:24:39.572" endtime="20221123 18:24:44.708"/>
+</test>
+<doc>Enickel IPTV Quick Check
+
+TO DO: Grab screenshot from Open Video Channel.
+
+TO DO: Check multicast join in control groups (e.g. OPCH, etc).</doc>
+<status status="PASS" starttime="20221123 18:24:20.387" endtime="20221123 18:24:44.711"/>
+</suite>
+<statistics>
+<total>
+<stat pass="30" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="17" fail="0" skip="0">dns</stat>
+<stat pass="8" fail="0" skip="0">dns primario</stat>
+<stat pass="8" fail="0" skip="0">dns secundario</stat>
+<stat pass="2" fail="0" skip="0">environment info</stat>
+<stat pass="1" fail="0" skip="0">multicast</stat>
+<stat pass="8" fail="0" skip="0">ping</stat>
+<stat pass="1" fail="0" skip="0">test setup</stat>
+</tag>
+<suite>
+<stat pass="30" fail="0" skip="0" id="s1" name="Tv Check Extended">Tv Check Extended</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
