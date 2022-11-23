@@ -1,0 +1,834 @@
+[000056221625c640] main libvlc debug: VLC media player - 3.0.16 Vetinari
+[000056221625c640] main libvlc debug: Copyright © 1996-2021 the VideoLAN team
+[000056221625c640] main libvlc debug: revision 3.0.13-8-g41878ff4f2
+[000056221625c640] main libvlc debug: configured with ./configure  '--build=x86_64-linux-gnu' '--prefix=/usr' '--includedir=${prefix}/include' '--mandir=${prefix}/share/man' '--infodir=${prefix}/share/info' '--sysconfdir=/etc' '--localstatedir=/var' '--disable-option-checking' '--disable-silent-rules' '--libdir=${prefix}/lib/x86_64-linux-gnu' '--runstatedir=/run' '--disable-maintainer-mode' '--disable-dependency-tracking' '--disable-debug' '--config-cache' '--disable-update-check' '--enable-fast-install' '--docdir=/usr/share/doc/vlc' '--with-binary-version=3.0.16-1build7' '--enable-a52' '--enable-aa' '--enable-aribsub' '--enable-avahi' '--enable-bluray' '--enable-caca' '--enable-chromaprint' '--enable-chromecast' '--enable-dav1d' '--enable-dbus' '--enable-dca' '--enable-dvbpsi' '--enable-dvdnav' '--enable-faad' '--enable-flac' '--enable-fluidsynth' '--enable-freetype' '--enable-fribidi' '--enable-gles2' '--enable-gnutls' '--enable-harfbuzz' '--enable-jack' '--enable-kate' '--enable-libass' '--enable-libmpeg2' '--enable-libxml2' '--enable-lirc' '--enable-mad' '--enable-matroska' '--enable-mod' '--enable-mpc' '--enable-mpg123' '--enable-mtp' '--enable-ncurses' '--enable-notify' '--enable-ogg' '--enable-opus' '--enable-pulse' '--enable-qt' '--enable-realrtsp' '--enable-samplerate' '--enable-sdl-image' '--enable-sftp' '--enable-shine' '--enable-shout' '--enable-skins2' '--enable-sndio' '--enable-soxr' '--enable-spatialaudio' '--enable-speex' '--enable-svg' '--enable-svgdec' '--enable-taglib' '--enable-theora' '--enable-twolame' '--enable-upnp' '--enable-vdpau' '--enable-vnc' '--enable-vorbis' '--enable-x264' '--enable-x265' '--enable-zvbi' '--with-kde-solid=/usr/share/solid/actions/' '--disable-aom' '--disable-crystalhd' '--disable-d3d11va' '--disable-decklink' '--disable-directx' '--disable-dsm' '--disable-dxva2' '--disable-fdkaac' '--disable-fluidlite' '--disable-freerdp' '--disable-goom' '--disable-gst-decode' '--disable-libtar' '--disable-live555' '--disable-macosx' '--disable-macosx-avfoundation' '--disable-macosx-qtkit' '--disable-mfx' '--disable-microdns' '--disable-opencv' '--disable-projectm' '--disable-schroedinger' '--disable-sparkle' '--disable-srt' '--disable-telx' '--disable-vpx' '--disable-vsxu' '--disable-wasapi' '--enable-alsa' '--enable-dc1394' '--enable-dv1394' '--enable-libplacebo' '--enable-linsys' '--enable-nfs' '--enable-udev' '--enable-v4l2' '--enable-wayland' '--enable-libva' '--enable-vcd' '--enable-smbclient' '--disable-oss' '--enable-mmx' '--enable-sse' '--disable-neon' '--disable-altivec' '--disable-omxil' 'build_alias=x86_64-linux-gnu' 'CFLAGS=-g -O2 -ffile-prefix-map=/build/vlc-hoXXw1/vlc-3.0.16=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security ' 'LDFLAGS=-Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -Wl,-z,now' 'CPPFLAGS=-Wdate-time -D_FORTIFY_SOURCE=2' 'CXXFLAGS=-g -O2 -ffile-prefix-map=/build/vlc-hoXXw1/vlc-3.0.16=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security ' 'OBJCFLAGS=-g -O2 -ffile-prefix-map=/build/vlc-hoXXw1/vlc-3.0.16=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security'
+[000056221625c640] main libvlc debug: searching plug-in modules
+[000056221625c640] main libvlc debug: loading plugins cache file /usr/lib/x86_64-linux-gnu/vlc/plugins/plugins.dat
+[000056221625c640] main libvlc debug: recursively browsing `/usr/lib/x86_64-linux-gnu/vlc/plugins'
+[000056221625c640] main libvlc debug: plug-ins loaded: 519 modules
+[000056221625c640] main libvlc debug: opening config file (/home/user/.config/vlc/vlcrc)
+[000056221625c990] main logger debug: looking for logger module matching "any": 4 candidates
+[000056221625c990] main logger debug: using logger module "console"
+[000056221625c640] main libvlc debug: translation test: code is "C"
+[00005622162f72d0] main keystore debug: looking for keystore module matching "memory": 4 candidates
+[00005622162f72d0] main keystore debug: using keystore module "memory"
+[000056221625c640] main libvlc debug: CPU has capabilities MMX MMXEXT SSE SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 FPU 
+[00005622162ffad0] main input debug: Creating an input for 'Media Library'
+[00005622162ffad0] main input debug: Input is a meta file: disabling unneeded options
+[00005622162ffad0] main input debug: using timeshift granularity of 50 MiB
+[00005622162ffad0] main input debug: using default timeshift path
+[00005622162ffad0] main input debug: `file/directory:///home/user/.local/share/vlc/ml.xspf' gives access `file' demux `directory' path `/home/user/.local/share/vlc/ml.xspf'
+[00005622162f76e0] main input source debug: creating demux: access='file' demux='directory' location='/home/user/.local/share/vlc/ml.xspf' file='/home/user/.local/share/vlc/ml.xspf'
+[00005622162f5040] main demux debug: looking for access_demux module matching "file": 18 candidates
+[00005622162f5040] main demux debug: no access_demux modules matched
+[00005622162f5770] main stream debug: creating access: file:///home/user/.local/share/vlc/ml.xspf
+[00005622162f5770] main stream debug:  (path: /home/user/.local/share/vlc/ml.xspf)
+[00005622162f5770] main stream debug: looking for access module matching "file": 29 candidates
+[00005622162f5770] main stream debug: using access module "filesystem"
+[0000562216321400] main stream debug: looking for stream_filter module matching "prefetch,cache_read": 26 candidates
+[0000562216321400] cache_read stream debug: Using stream method for AStream*
+[0000562216321400] cache_read stream debug: starting pre-buffering
+[0000562216321400] cache_read stream debug: received first data after 0 ms
+[0000562216321400] cache_read stream debug: pre-buffering done 296 bytes in 0s - 14453 KiB/s
+[0000562216321400] main stream debug: using stream_filter module "cache_read"
+[0000562216322370] main stream debug: looking for stream_filter module matching "any": 26 candidates
+[0000562216322370] playlist stream debug: using XSPF playlist reader
+[0000562216322370] main stream debug: using stream_filter module "playlist"
+[0000562216322370] main stream debug: stream filter added to 0x562216321400
+[00005622163258c0] main stream debug: looking for stream_filter module matching "any": 26 candidates
+[00005622163258c0] main stream debug: no stream_filter modules matched
+[00005622162f4e70] main stream_directory debug: looking for stream_directory module matching "any": 1 candidates
+[00005622162f4e70] main stream_directory debug: no stream_directory modules matched
+[00005622162f76e0] main input source debug: attachment of directory-extractor failed for file:///home/user/.local/share/vlc/ml.xspf
+[00005622163258c0] main stream debug: looking for stream_filter module matching "record": 26 candidates
+[00005622163258c0] main stream debug: using stream_filter module "record"
+[00005622162f76e0] main input source debug: creating demux: access='file' demux='directory' location='/home/user/.local/share/vlc/ml.xspf' file='/home/user/.local/share/vlc/ml.xspf'
+[00005622162f5040] main demux debug: looking for demux module matching "directory": 54 candidates
+[00005622162f5040] main demux debug: using demux module "directory"
+[00005622162f7150] main demux meta debug: looking for meta reader module matching "any": 2 candidates
+[00005622162f7150] lua demux meta debug: Trying Lua scripts in /home/user/.local/share/vlc/lua/meta/reader
+[00005622162f7150] lua demux meta debug: Trying Lua scripts in /usr/lib/x86_64-linux-gnu/vlc/lua/meta/reader
+[00005622162f7150] lua demux meta debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/reader/filename.luac
+[00005622162f7150] lua demux meta debug: Trying Lua scripts in /usr/share/vlc/lua/meta/reader
+[00005622162f7150] main demux meta debug: no meta reader modules matched
+[00005622162ffad0] main input debug: `file/directory:///home/user/.local/share/vlc/ml.xspf' successfully opened
+[0000562216335330] main xml reader debug: looking for xml reader module matching "any": 1 candidates
+[0000562216335330] main xml reader debug: using xml reader module "xml"
+[00005622162ffad0] main input debug: EOF reached
+[00005622162f5040] main demux debug: removing module "directory"
+[00005622163258c0] main stream debug: removing module "record"
+[0000562216322370] main stream debug: removing module "playlist"
+[0000562216321400] main stream debug: removing module "cache_read"
+[00005622162f5770] main stream debug: removing module "filesystem"
+[00005622162fd200] main playlist debug: creating audio output
+[0000562216334fa0] main audio output debug: looking for audio output module matching "any": 6 candidates
+[0000562216334fa0] vlcpulse audio output debug: using library version 15.99.0
+[0000562216334fa0] vlcpulse audio output debug:  (compiled with version 15.99.0, protocol 35)
+[0000562216334fa0] vlcpulse audio output debug: connected locally to /run/user/1000/pulse/native as client #22
+[0000562216334fa0] vlcpulse audio output debug: using protocol 35, server protocol 35
+[0000562216334fa0] pulse audio output debug: adding sink 0: alsa_output.pci-0000_00_1f.3.analog-stereo (Built-in Audio Analog Stereo)
+[0000562216334fa0] main audio output debug: using audio output module "pulse"
+[00005622162fd200] main playlist debug: keeping audio output
+[00005622162f4680] main interface debug: looking for interface module matching "dbus,none": 19 candidates
+[00005622162f4680] dbus interface debug: listening on dbus as: org.mpris.MediaPlayer2.vlc
+[00005622162f4680] main interface debug: using interface module "dbus"
+[0000562216341560] main interface debug: looking for interface module matching "hotkeys,none": 19 candidates
+[0000562216341560] main interface debug: using interface module "hotkeys"
+[0000562216341ee0] main interface debug: looking for interface module matching "globalhotkeys,none": 19 candidates
+[0000562216341ee0] main interface debug: using interface module "xcb_hotkeys"
+[0000562216342da0] main interface debug: looking for interface module matching "dummy": 19 candidates
+[0000562216342da0] dummy interface: using the dummy interface module...
+[0000562216342da0] main interface debug: using interface module "dummy"
+[00005622162fd200] main playlist debug: processing request item: null, node: Playlist, skip: 0
+[00005622162fd200] main playlist debug: rebuilding array of current - root Playlist
+[00005622162fd200] main playlist debug: rebuild done - 2 items, index -1
+[00005622162fd200] main playlist debug: starting playback of new item
+[00005622162fd200] main playlist debug: resyncing on rtp://239.128.1.207:5001
+[00005622162fd200] main playlist debug: rtp://239.128.1.207:5001 is at 0
+[00005622162fd200] main playlist debug: creating new input thread
+[00007fd91c000c90] main input debug: Creating an input for 'rtp://239.128.1.207:5001'
+[00005622162f4680] dbus interface debug: Getting All properties
+[00005622162fd200] main playlist debug: requesting art for new input thread
+[00007fd91c000c90] main input debug: using timeshift granularity of 50 MiB
+[00007fd91c000c90] main input debug: using default timeshift path
+[00007fd91c000c90] main input debug: `rtp://@239.128.1.207:5001' gives access `rtp' demux `any' path `@239.128.1.207:5001'
+[00007fd914000fb0] main input source debug: creating demux: access='rtp' demux='any' location='@239.128.1.207:5001' file='(null)'
+[00007fd914001140] main demux debug: looking for access_demux module matching "rtp": 18 candidates
+[00007fd908000c30] main meta fetcher debug: looking for meta fetcher module matching "any": 1 candidates
+[00007fd908000c30] lua meta fetcher debug: Trying Lua scripts in /home/user/.local/share/vlc/lua/meta/fetcher
+[00007fd908000c30] lua meta fetcher debug: Trying Lua scripts in /usr/lib/x86_64-linux-gnu/vlc/lua/meta/fetcher
+[00007fd908000c30] lua meta fetcher debug: Trying Lua scripts in /usr/share/vlc/lua/meta/fetcher
+[00007fd908000c30] main meta fetcher debug: no meta fetcher modules matched
+[00007fd908000c30] main art finder debug: looking for art finder module matching "any": 2 candidates
+[00007fd914001140] main demux debug: net: opening 239.128.1.207 datagram port 5001
+[00007fd914001140] main demux debug: using access_demux module "rtp"
+[00007fd9140026b0] main demux meta debug: looking for meta reader module matching "any": 2 candidates
+[00007fd9140026b0] lua demux meta debug: Trying Lua scripts in /home/user/.local/share/vlc/lua/meta/reader
+[00007fd9140026b0] lua demux meta debug: Trying Lua scripts in /usr/lib/x86_64-linux-gnu/vlc/lua/meta/reader
+[00007fd9140026b0] lua demux meta debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/reader/filename.luac
+[00007fd9140026b0] lua demux meta debug: Trying Lua scripts in /usr/share/vlc/lua/meta/reader
+[00007fd9140026b0] main demux meta debug: no meta reader modules matched
+[00007fd91c000c90] main input debug: `rtp://@239.128.1.207:5001' successfully opened
+[00007fd908000c30] lua art finder debug: Trying Lua scripts in /home/user/.local/share/vlc/lua/meta/art
+[00007fd908000c30] lua art finder debug: Trying Lua scripts in /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art
+[00007fd908000c30] lua art finder debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/00_musicbrainz.luac
+[00007fd908000c30] lua art finder debug: skipping script (unmatched scope) /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/00_musicbrainz.luac
+[00007fd908000c30] lua art finder debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/01_googleimage.luac
+[00005622162f4680] dbus interface debug: Getting All properties
+[00007fd908000c30] lua art finder debug: skipping script (unmatched scope) /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/01_googleimage.luac
+[00007fd908000c30] lua art finder debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/02_frenchtv.luac
+[00007fd908000c30] lua art finder debug: skipping script (unmatched scope) /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/02_frenchtv.luac
+[00007fd908000c30] lua art finder debug: Trying Lua playlist script /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/03_lastfm.luac
+[00005622162f4680] dbus interface debug: Getting All properties
+[00007fd908000c30] lua art finder debug: skipping script (unmatched scope) /usr/lib/x86_64-linux-gnu/vlc/lua/meta/art/03_lastfm.luac
+[00007fd908000c30] lua art finder debug: Trying Lua scripts in /usr/share/vlc/lua/meta/art
+[00007fd908000c30] main art finder debug: no art finder modules matched
+[00007fd914001140] rtp demux debug: detected MPEG2 TS
+[00007fd914001140] rtp demux debug: added payload type 33 (f = 90000 Hz)
+[00007fd914001140] rtp demux debug: added RTP source (00004ed5)
+[00007fd908000b40] main stream debug: creating demux: access='' demux='ts' location='' file='(null)'
+[00007fd90c000c30] main demux debug: looking for demux module matching "ts": 54 candidates
+[00007fd90c000c30] ts demux debug: Standard set to Auto
+[00007fd90c000c30] main demux debug: using demux module "ts"
+[00007fd90c000c30] ts demux debug: DEMUX_SET_GROUP -1 (nil)
+[00007fd90c000c30] ts demux debug: pid[1001] unknown
+[00007fd90c000c30] ts demux debug: first packet for pid=1001 cc=0x4
+[00007fd90c000c30] ts demux debug: pid[1004] unknown
+[00007fd90c000c30] ts demux debug: first packet for pid=1004 cc=0xb
+[00007fd90c000c30] ts demux debug: pid[1005] unknown
+[00007fd90c000c30] ts demux debug: first packet for pid=1005 cc=0xc
+[00007fd90c000c30] ts demux debug: first packet for pid=0 cc=0xf
+[00007fd90c000c30] ts demux debug: PATCallBack called
+[00007fd90c000c30] ts demux debug: new PAT ts_id=195 version=2 current_next=1
+[00007fd90c000c30] ts demux debug:   * number=1 pid=1000
+[00007fd90c000c30] ts demux debug: temporary receiving program 1
+[00007fd90c000c30] ts demux debug: first packet for pid=1000 cc=0x7
+[00007fd90c000c30] ts demux debug: PMTCallBack called for program 1
+[00007fd90c000c30] ts demux debug: new PMT program number=1 version=2 pid_pcr=1001
+[00007fd90c000c30] ts demux debug:   * pid=1001 type=0x1b AVC video stream as defined in ITU-T Rec. H.264
+[00007fd90c000c30] ts demux debug:     - ES descriptor tag 0x2a
+[00007fd90c000c30] ts demux debug:    => pid 1001 has now es fcc=h264
+[00007fd91c000c90] main input debug: selecting program id=1
+[00007fd90c006910] main packetizer debug: looking for packetizer module matching "any": 25 candidates
+[00007fd90c006910] main packetizer debug: using packetizer module "h264"
+[00007fd90c006080] main decoder debug: looking for video decoder module matching "any": 15 candidates
+[00007fd90c006080] avcodec decoder debug: using ffmpeg Lavc58.134.100
+[00007fd90c006080] avcodec decoder debug: CPU flags: 0x000fd3db
+[00007fd90c006080] avcodec decoder debug: allowing 5 thread(s) for decoding
+[00007fd90c006080] avcodec decoder debug: codec (h264) started
+[00007fd90c006080] avcodec decoder debug: using frame thread mode with 5 threads
+[00007fd90c006080] main decoder debug: using video decoder module "avcodec"
+[00007fd90c000c30] ts demux debug: Default program is 1
+[00007fd90c000c30] ts demux debug:   * pid=1004 type=0x3 ISO/IEC 11172 Audio
+[00007fd90c000c30] ts demux debug:     - ES descriptor tag 0xa
+[00007fd90c000c30] ts demux debug:       found language: por
+[00007fd90c000c30] ts demux debug:    => pid 1004 has now es fcc=mpga
+[00007fd90c0de340] main packetizer debug: looking for packetizer module matching "any": 25 candidates
+[00007fd90c0de340] main packetizer debug: using packetizer module "mpegaudio"
+[00007fd90c0ddab0] main decoder debug: looking for audio decoder module matching "any": 20 candidates
+[00007fd90c0ddab0] mpg123 decoder debug: mpga->f32l, bits per sample: 32
+[00007fd90c0ddab0] main decoder debug: using audio decoder module "mpg123"
+[00007fd90c000c30] ts demux debug:   * pid=1005 type=0x3 ISO/IEC 11172 Audio
+[00007fd90c000c30] ts demux debug:     - ES descriptor tag 0xa
+[00007fd90c000c30] ts demux debug:       found language: org
+[00007fd90c000c30] ts demux debug:    => pid 1005 has now es fcc=mpga
+[00007fd90c000c30] ts demux debug:   * pid=17 listening for SDT
+[00007fd90c000c30] ts demux debug: enabling pid 1001 from program 1
+[00007fd90c000c30] ts demux debug: enabling pid 1004 from program 1
+[00007fd90c000c30] ts demux debug: enabling pid 1005 from program 1
+[00007fd90c000c30] ts demux debug: enabling pcr pid 1001 from program 1
+[00007fd90c000c30] ts demux debug: first packet for pid=1001 cc=0x4
+[00007fd91c000c90] main input debug: Buffering 0%
+[00007fd91c000c90] main input debug: Buffering 2%
+[00007fd90c000c30] ts demux debug: first packet for pid=1004 cc=0xa
+[00007fd90c000c30] ts demux debug: first packet for pid=1005 cc=0xa
+[00007fd90c006910] h264 packetizer warning: waiting for SPS/PPS
+[00007fd91c000c90] main input debug: Buffering 5%
+[00007fd90c0de340] mpegaudio packetizer debug: MPGA channels:2 samplerate:48000 bitrate:128
+[00007fd90c0ddab0] main decoder debug: restarting module due to input format change
+[00007fd90c0ddab0] main decoder debug: removing module "mpg123"
+[00007fd90c0ddab0] main decoder debug: looking for audio decoder module matching "any": 20 candidates
+[00007fd90c0ddab0] mpg123 decoder debug: mpga->f32l, bits per sample: 32
+[00007fd90c0ddab0] main decoder debug: using audio decoder module "mpg123"
+[00007fd90c006910] h264 packetizer warning: waiting for SPS/PPS
+[00007fd91c000c90] main input debug: Buffering 8%
+[00007fd90c006910] h264 packetizer warning: waiting for SPS/PPS
+[00007fd90c006910] h264 packetizer warning: waiting for SPS/PPS
+[00007fd91c000c90] main input debug: Buffering 11%
+[00005622162fd200] main playlist debug: reusing audio output
+[0000562216334fa0] pulse audio output debug: using stereo channel map
+[00007fd91c000c90] main input debug: Buffering 14%
+[00007fd90c006910] h264 packetizer warning: waiting for SPS/PPS
+[00007fd90c006910] h264 packetizer warning: waiting for SPS/PPS
+[00007fd91c000c90] main input debug: Buffering 15%
+[00007fd91c000c90] main input debug: Buffering 18%
+[00007fd91c000c90] main input debug: Buffering 21%
+[0000562216334fa0] pulse audio output debug: changed buffer metrics: maxlength=4194304, tlength=46080, prebuf=0, minreq=15360
+[0000562216334fa0] pulse audio output debug: connected to sink alsa_output.pci-0000_00_1f.3.analog-stereo
+[0000562216334fa0] main audio output debug: output 'f32l' 48000 Hz Stereo frame=1 samples/8 bytes
+[00007fd8f4011530] main volume debug: looking for audio volume module matching "any": 2 candidates
+[0000562216334fa0] pulse audio output debug: changing sink 0: alsa_output.pci-0000_00_1f.3.analog-stereo (Built-in Audio Analog Stereo)
+[00007fd8f4011530] main volume debug: using audio volume module "float_mixer"
+[0000562216334fa0] main audio output debug: input 'f32l' 48000 Hz Stereo frame=1 samples/8 bytes
+[00007fd8f4015f60] main audio filter debug: looking for audio filter module matching "scaletempo": 16 candidates
+[00007fd8f4015f60] scaletempo audio filter debug: format: 48000 rate, 2 nch, 4 bps, fl32
+[00007fd8f4015f60] scaletempo audio filter debug: params: 30 stride, 0,200 overlap, 14 search
+[00007fd8f4015f60] scaletempo audio filter debug: 1,000 scale, 1440,000 stride_in, 1440 stride_out, 1152 standing, 288 overlap, 672 search, 2400 queue, fl32 mode
+[00007fd8f4015f60] main audio filter debug: using audio filter module "scaletempo"
+[0000562216334fa0] main audio output debug: conversion: 'f32l'->'f32l' 48000 Hz->48000 Hz Stereo->Stereo
+[0000562216334fa0] main audio output debug: conversion pipeline complete
+[0000562216334fa0] main audio output debug: conversion: 'f32l'->'f32l' 48000 Hz->48000 Hz Stereo->Stereo
+[0000562216334fa0] main audio output debug: conversion pipeline complete
+[00007fd8f401daa0] main audio resampler debug: looking for audio resampler module matching "any": 4 candidates
+[00007fd8f401daa0] main audio resampler debug: using audio resampler module "samplerate"
+[00007fd91c000c90] main input debug: Buffering 24%
+[00007fd91c000c90] main input debug: Buffering 27%
+[00007fd91c000c90] main input debug: Buffering 30%
+[00007fd91c000c90] main input debug: Buffering 33%
+[00007fd91c000c90] main input debug: Buffering 36%
+[00007fd91c000c90] main input debug: Buffering 39%
+[00007fd91c000c90] main input debug: Buffering 42%
+[00007fd91c000c90] main input debug: Buffering 45%
+[00007fd91c000c90] main input debug: Buffering 48%
+[00007fd91c000c90] main input debug: Buffering 51%
+[00007fd91c000c90] main input debug: Buffering 54%
+[00007fd90c006910] h264 packetizer warning: waiting for SPS/PPS
+[00007fd90c006910] h264 packetizer debug: found NAL_SPS (sps_id=0)
+[00007fd90c006910] h264 packetizer debug: found NAL_PPS (pps_id=0 sps_id=0)
+[00007fd91c000c90] main input debug: Buffering 57%
+[00007fd91c000c90] main input debug: Buffering 60%
+[00007fd91c000c90] main input debug: Buffering 63%
+[00007fd90c006080] main decoder debug: restarting module due to input format change
+[00007fd90c006080] main decoder debug: removing module "avcodec"
+[00007fd90c006080] main decoder debug: looking for video decoder module matching "any": 15 candidates
+[00007fd90c006080] avcodec decoder debug: using ffmpeg Lavc58.134.100
+[00007fd90c006080] avcodec decoder debug: CPU flags: 0x000fd3db
+[00007fd90c006080] avcodec decoder debug: allowing 5 thread(s) for decoding
+[h264 @ 0x7fd8fc012740] nal_unit_type: 7(SPS), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] nal_unit_type: 8(PPS), nal_ref_idc: 1
+[00007fd90c006080] avcodec decoder debug: codec (h264) started
+[00007fd90c006080] avcodec decoder debug: using frame thread mode with 5 threads
+[00007fd90c006080] main decoder debug: using video decoder module "avcodec"
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 7(SPS), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] nal_unit_type: 8(PPS), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 5(IDR), nal_ref_idc: 1
+[00007fd90c006080] avcodec decoder debug: available hardware decoder output format 100 (vdpau)
+[00007fd90c006080] avcodec decoder debug: available hardware decoder output format 119 (cuda)
+[00007fd90c006080] avcodec decoder debug: available hardware decoder output format 46 (vaapi_vld)
+[00007fd90c006080] avcodec decoder debug: available software decoder output format 12 (yuvj420p)
+[00007fd90c006080] avcodec decoder debug: trying format vaapi_vld
+[00007fd8f8090a80] main spu text debug: looking for text renderer module matching "any": 2 candidates
+[00007fd8f8090a80] freetype spu text debug: Building font databases.
+[00007fd91c000c90] main input debug: Buffering 66%
+[00007fd91c000c90] main input debug: Buffering 69%
+[00007fd8f8090a80] freetype spu text debug: Took -41676 microseconds
+[00007fd8f8090a80] main spu text debug: using text renderer module "freetype"
+[00007fd8f80cabe0] main scale debug: looking for video converter module matching "any": 23 candidates
+[swscaler @ 0x7fd8f8102cc0] Forcing full internal H chroma due to input having non subsampled chroma
+[00007fd8f80cabe0] swscale scale debug: 32x32 (32x32) chroma: YUVA -> 16x16 (16x16) chroma: RGBA with scaling using Bicubic (good quality)
+[00007fd8f80cabe0] main scale debug: using video converter module "swscale"
+[00007fd8f80fe5e0] main scale debug: looking for video converter module matching "any": 23 candidates
+[00007fd8f80fe5e0] yuvp scale debug: YUVP to YUVA converter
+[00007fd8f80fe5e0] main scale debug: using video converter module "yuvp"
+[00007fd8f8062820] main video output debug: Deinterlacing available
+[00007fd8f8062820] main video output debug: deinterlace -1, mode auto, is_needed 0
+[00007fd8f80ceb50] main window debug: looking for vout window module matching "any": 6 candidates
+[00007fd8f80ceb50] main window debug: resized to 1024x576
+[00007fd8f80ceb50] main window debug: using vout window module "xcb_window"
+[00007fd8f80b2d60] main inhibit debug: looking for inhibit module matching "any": 2 candidates
+[00007fd8f80ceb50] xcb_window window debug: unhandled event 21
+[00007fd8f80b2d60] dbus_screensaver inhibit debug: found service org.freedesktop.ScreenSaver
+[00007fd8f80b2d60] main inhibit debug: using inhibit module "dbus_screensaver"
+[00007fd8f8062820] main video output debug: Opening vout display wrapper
+[00007fd8ec0013c0] main vout display debug: looking for vout display module matching "any": 14 candidates
+[00007fd8ec0013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007fd8ec004e90] main gl debug: looking for opengl module matching "any": 3 candidates
+[00007fd91c000c90] main input debug: Buffering 72%
+[00007fd8f80ceb50] main window debug: resized to 1024x576
+[00007fd8ec0013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007fd91c000c90] main input debug: Buffering 75%
+[00007fd8ec004e90] egl_x11 gl debug: EGL version 1.5 by Mesa Project
+[00007fd8ec004e90] egl_x11 gl debug:  extensions: EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_CHROMIUM_sync_control EGL_EXT_buffer_age EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_swap_buffers_with_damage EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_no_config_context EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_KHR_swap_buffers_with_damage EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_drm_image EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_NOK_texture_from_pixmap EGL_WL_bind_wayland_display 
+[00007fd8f80ceb50] main window debug: resized to 1024x576
+[00007fd8ec0013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007fd8ec004e90] main gl debug: using opengl module "egl_x11"
+[00007fd8f80ceb50] main window debug: resized to 1024x576
+[00007fd8ec0013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007fd8ec004e90] gl gl: Initialized libplacebo v4.192.1 (API v192)
+[00007fd8f80ceb50] xcb_window window debug: unhandled event 19
+[00007fd8ec18b990] main generic debug: looking for glconv module matching "any": 4 candidates
+libva info: VA-API version 1.14.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_14
+libva info: va_openDriver() returns 0
+[00007fd8ec18b990] main generic debug: using glconv module "glconv_vaapi_x11"
+[00007fd8ec0013c0] main vout display debug: using vout display module "gl"
+[00007fd8f8062820] main video output debug: original format sz 1024x576, of (0,0), vsz 1024x576, 4cc VAOP, sar 1:1, msk r0x0 g0x0 b0x0
+[00007fd8f8062820] main video output debug: Adding 'scene' as interactive
+[00007fd8ec89cc30] main filter debug: looking for video filter module matching "scene,chain": 50 candidates
+[00007fd8ec89cc30] chain filter debug: Trying to use chroma I420 as middle man
+[00007fd8ec8b9d30] main filter debug: looking for video converter module matching "any": 23 candidates
+[00007fd8ec8b9d30] vaapi_filters filter warning: Using SW chroma filter for 1024x576 VAOP -> I420
+[00007fd8ec8b9d30] main filter debug: using video converter module "vaapi_filters"
+[00007fd8ec89cc30] main filter debug: Filter 'VAAPI filters' (0x7fd8ec8b9d30) appended to chain
+[00007fd8ec8fda60] main filter debug: looking for video filter module matching "scene,chain": 50 candidates
+[00007fd8ec8fda60] main filter debug: using video filter module "scene"
+[00007fd8ec89cc30] main filter debug: Filter 'scene' (0x7fd8ec8fda60) appended to chain
+[00007fd8ec89cc30] main filter debug: using video filter module "chain"
+[00007fd8f8062820] main video output debug: Filter 'scene' (0x7fd8ec89cc30) appended to chain
+[00007fd8f8062820] main video output debug: Adding a filter to compensate for format changes
+[00007fd8ec8fe610] main filter debug: looking for video converter module matching "any": 23 candidates
+[00007fd8ec8fe610] vaapi_filters filter warning: Using SW chroma filter for 1024x576 I420 -> VAOP
+[00007fd8ec8fe610] main filter debug: using video converter module "vaapi_filters"
+[00007fd8f8062820] main video output debug: Filter 'VAAPI filters' (0x7fd8ec8fe610) appended to chain
+[00007fd8ec89cc30] main filter debug: removing module "chain"
+[00007fd8ec8b9d30] main filter debug: removing module "vaapi_filters"
+[00007fd8ec89cc30] main filter debug: Filter 0x7fd8ec8b9d30 removed from chain
+[00007fd8ec8fda60] main filter debug: removing module "scene"
+[00007fd8ec89cc30] main filter debug: Filter 0x7fd8ec8fda60 removed from chain
+[00007fd8f8062820] main video output debug: Filter 0x7fd8ec89cc30 removed from chain
+[00007fd8ec8fe610] main filter debug: removing module "vaapi_filters"
+[00007fd8f8062820] main video output debug: Filter 0x7fd8ec8fe610 removed from chain
+[00007fd8f8062820] main video output debug: Adding 'scene' as interactive
+[00007fd8ec8fe610] main filter debug: looking for video filter module matching "scene,chain": 50 candidates
+[00007fd8ec8fe610] chain filter debug: Trying to use chroma I420 as middle man
+[00007fd8ec89cc30] main filter debug: looking for video converter module matching "any": 23 candidates
+[00007fd8ec89cc30] vaapi_filters filter warning: Using SW chroma filter for 1024x576 VAOP -> I420
+[00007fd8ec89cc30] main filter debug: using video converter module "vaapi_filters"
+[00007fd8ec8fe610] main filter debug: Filter 'VAAPI filters' (0x7fd8ec89cc30) appended to chain
+[00007fd8ec8fda60] main filter debug: looking for video filter module matching "scene,chain": 50 candidates
+[00007fd8ec8fda60] main filter debug: using video filter module "scene"
+[00007fd8ec8fe610] main filter debug: Filter 'scene' (0x7fd8ec8fda60) appended to chain
+[00007fd8ec8fe610] main filter debug: using video filter module "chain"
+[00007fd8f8062820] main video output debug: Filter 'scene' (0x7fd8ec8fe610) appended to chain
+[00007fd8f8062820] main video output debug: Adding a filter to compensate for format changes
+[00007fd8ec8b9d30] main filter debug: looking for video converter module matching "any": 23 candidates
+[00007fd8ec8b9d30] vaapi_filters filter warning: Using SW chroma filter for 1024x576 I420 -> VAOP
+[00007fd8ec8b9d30] main filter debug: using video converter module "vaapi_filters"
+[00007fd8f8062820] main video output debug: Filter 'VAAPI filters' (0x7fd8ec8b9d30) appended to chain
+[00007fd8f8090a80] main spu text debug: removing module "freetype"
+[00007fd8f8090a80] main spu text debug: looking for text renderer module matching "any": 2 candidates
+[00007fd8f8090a80] freetype spu text debug: Building font databases.
+[00007fd91c000c90] main input debug: Buffering 78%
+[00007fd8f80ceb50] main window debug: resized to 1024x576
+[00007fd8ec0013c0] main vout display debug: VoutDisplayEvent 'resize' 1024x576
+[00007fd8f8090a80] freetype spu text debug: Took -14023 microseconds
+[00007fd8f8090a80] main spu text debug: using text renderer module "freetype"
+[00007fd8f80c3bf0] main generic debug: looking for hw decoder module matching "any": 3 candidates
+[00007fd8f80c3bf0] main generic debug: using hw decoder module "vaapi"
+[00007fd90c006080] avcodec decoder: Using Intel iHD driver for Intel(R) Gen Graphics - 22.3.1 () for hardware decoding
+[h264 @ 0x7fd8fc012740] Format vaapi_vld chosen by get_format().
+[h264 @ 0x7fd8fc012740] Format vaapi_vld requires hwaccel initialisation.
+[h264 @ 0x7fd8fc012740] Using deprecated struct vaapi_context in decode.
+[h264 @ 0x7fd8fc012740] Using user-supplied decoder context: 0x4/0x10000000.
+[h264 @ 0x7fd8fc012740] Reinit context to 1024x576, pix_fmt: vaapi_vld
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] no picture 
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (91922 bytes) is 0x3.
+[h264 @ 0x7fd8fc012740] Decode to surface 0x4.
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] no picture 
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (19921 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0x5.
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (2376 bytes) is 0x3.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0x6.
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (677 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0x7.
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7fd8fc0c7980] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7fd8fc0c7980] Slice 0 data buffer (13591 bytes) is 0x3.
+[h264 @ 0x7fd8fc0c7980] Decode to surface 0x8.
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0x1.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (1476 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Decode to surface 0x9.
+[00007fd90c006080] main decoder debug: Received first picture
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[00007fd8ec8fda60] main filter error: /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00001.jpg.swp: No such file or directory
+[00007fd8ec8fda60] scene filter error: could not create snapshot /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00001.jpg.swp
+[00007fd91c000c90] main input debug: Buffering 81%
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0x1.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (1706 bytes) is 0x3.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0xa.
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[00007fd91c000c90] main input debug: Buffering 84%
+[00007fd91c000c90] main input debug: Buffering 87%
+[00007fd91c000c90] main input debug: Buffering 90%
+[00007fd91c000c90] main input debug: Buffering 93%
+[00007fd91c000c90] main input debug: Buffering 96%
+[00007fd91c000c90] main input debug: Buffering 99%
+[00007fd91c000c90] main input debug: Stream buffering done (1028 ms in 991 ms)
+[00007fd91c000c90] main input debug: Decoder wait done in 0 ms
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0x1.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (19266 bytes) is 0x5.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0xb.
+[0000562216334fa0] pulse audio output debug: deferring start (923707 us)
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (1097 bytes) is 0x1.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0xc.
+[0000562216334fa0] pulse audio output debug: deferring start (900123 us)
+[0000562216334fa0] pulse audio output debug: deferring start (876124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (852124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (828124 us)
+[00007fd90c000c30] ts demux debug: pid[1] unknown
+[00007fd90c000c30] ts demux debug: first packet for pid=1 cc=0x1
+[00007fd90c000c30] ts demux debug: first packet for pid=17 cc=0xc
+[00007fd90c000c30] ts demux debug: SDTCallBack called
+[00007fd90c000c30] ts demux debug:   * pid=18 listening for EIT
+[00007fd90c000c30] ts demux debug:   * pid=20 listening for TDT
+[00007fd90c000c30] ts demux debug: new SDT ts_id=195 version=2 current_next=1 network_id=1
+[00007fd90c000c30] ts demux debug:   * service id=1 eit schedule=0 present=0 running=4 free_ca=0
+[0000562216334fa0] pulse audio output debug: deferring start (804124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (780123 us)
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[0000562216334fa0] pulse audio output debug: deferring start (756123 us)
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc0c7980] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc0c7980] Slice 0 data buffer (891 bytes) is 0x5.
+[h264 @ 0x7fd8fc0c7980] Decode to surface 0xd.
+[0000562216334fa0] pulse audio output debug: deferring start (732124 us)
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (12932 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Decode to surface 0xe.
+[0000562216334fa0] pulse audio output debug: deferring start (708123 us)
+[00007fd90c000c30] ts demux debug:     - type=1 provider=Vivo name=HEPNIS - TV Escola
+[00007fd91c000c90] main input debug: EsOutProgramMeta: number=1
+[0000562216334fa0] pulse audio output debug: deferring start (684123 us)
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (1425 bytes) is 0x5.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0xf.
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (967 bytes) is 0x2.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0x10.
+[0000562216334fa0] pulse audio output debug: deferring start (660123 us)
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (14077 bytes) is 0x5.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0x11.
+[0000562216334fa0] pulse audio output debug: deferring start (636123 us)
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc0c7980] Slice 0 param buffer (3128 bytes) is 0.
+[0000562216334fa0] pulse audio output debug: deferring start (612123 us)
+[h264 @ 0x7fd8fc0c7980] Slice 0 data buffer (1986 bytes) is 0x2.
+[h264 @ 0x7fd8fc0c7980] Decode to surface 0x12.
+[0000562216334fa0] pulse audio output debug: deferring start (588124 us)
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[0000562216334fa0] pulse audio output debug: deferring start (564123 us)
+[0000562216334fa0] pulse audio output debug: deferring start (540124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (516123 us)
+[0000562216334fa0] pulse audio output debug: deferring start (492123 us)
+[0000562216334fa0] pulse audio output debug: deferring start (468124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (444124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (420124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (396124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (372124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (348123 us)
+[0000562216334fa0] pulse audio output debug: deferring start (324123 us)
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (689 bytes) is 0x5.
+[h264 @ 0x7fd8fc012740] Decode to surface 0x13.
+[0000562216334fa0] pulse audio output debug: deferring start (300124 us)
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[0000562216334fa0] pulse audio output debug: deferring start (276124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (252123 us)
+[0000562216334fa0] pulse audio output debug: deferring start (228124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (204124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (180124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (156124 us)
+[0000562216334fa0] pulse audio output debug: deferring start (132123 us)
+[0000562216334fa0] pulse audio output debug: deferring start (108124 us)
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (15805 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0x14.
+[0000562216334fa0] pulse audio output debug: deferring start (84124 us)
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[0000562216334fa0] pulse audio output debug: deferring start (60123 us)
+[0000562216334fa0] pulse audio output debug: deferring start (36121 us)
+[0000562216334fa0] pulse audio output debug: deferring start (12124 us)
+[0000562216334fa0] pulse audio output warning: starting late (-11876 us)
+[0000562216334fa0] main audio output warning: playback too early (-100394): down-sampling
+[0000562216334fa0] pulse audio output debug: changing sink 0: alsa_output.pci-0000_00_1f.3.analog-stereo (Built-in Audio Analog Stereo)
+[0000562216334fa0] pulse audio output debug: started
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0x1.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (2116 bytes) is 0x5.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0x15.
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (1388 bytes) is 0x1.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0x16.
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 0, 672 bytes) is 0x1.
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc0c7980] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc0c7980] Slice 0 data buffer (14589 bytes) is 0x5.
+[h264 @ 0x7fd8fc0c7980] Decode to surface 0x17.
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (1717 bytes) is 0x1.
+[h264 @ 0x7fd8fc012740] Decode to surface 0x18.
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0x1.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (934 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0x19.
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (15451 bytes) is 0x1.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0x1a.
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (1176 bytes) is 0x2.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0x1b.
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc0c7980] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc0c7980] Slice 0 data buffer (790 bytes) is 0x5.
+[h264 @ 0x7fd8fc0c7980] Decode to surface 0x1c.
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (13096 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Decode to surface 0x1d.
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (1072 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0x1e.
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (359 bytes) is 0x3.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0x1f.
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (14682 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0x20.
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc0c7980] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7fd8fc0c7980] Slice 0 data buffer (2443 bytes) is 0x3.
+[h264 @ 0x7fd8fc0c7980] Decode to surface 0x21.
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0x3.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (1028 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Decode to surface 0x22.
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (25714 bytes) is 0x3.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0x23.
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[00007fd8ec0013c0] main vout display debug: auto hiding mouse cursor
+[00007fd8ec8fda60] main filter error: /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00025.jpg.swp: No such file or directory
+[00007fd8ec8fda60] scene filter error: could not create snapshot /home/user/Documents/@projetos/robotframework/test/shell/evidences/screenshots/scene00025.jpg.swp
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (1418 bytes) is 0x5.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0x4.
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (384 bytes) is 0x2.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0x7.
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc0c7980] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc0c7980] Slice 0 data buffer (14487 bytes) is 0x5.
+[h264 @ 0x7fd8fc0c7980] Decode to surface 0x6.
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (1203 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Decode to surface 0x5.
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (616 bytes) is 0x5.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0xa.
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (11878 bytes) is 0x2.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0x9.
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (1481 bytes) is 0x5.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0x8.
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc0c7980] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc0c7980] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc0c7980] Slice 0 data buffer (969 bytes) is 0x2.
+[h264 @ 0x7fd8fc0c7980] Decode to surface 0xd.
+[h264 @ 0x7fd8fc012740] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc012740] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc012740] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc012740] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc012740] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc012740] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc012740] Slice 0 data buffer (12986 bytes) is 0x5.
+[h264 @ 0x7fd8fc012740] Decode to surface 0xc.
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc071ac0] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc071ac0] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc071ac0] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc071ac0] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc071ac0] Slice 0 data buffer (1199 bytes) is 0x2.
+[h264 @ 0x7fd8fc071ac0] Decode to surface 0xb.
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 0
+[h264 @ 0x7fd8fc08e340] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc08e340] Param buffer (type 0, 672 bytes) is 0x2.
+[h264 @ 0x7fd8fc08e340] Param buffer (type 1, 240 bytes) is 0x4.
+[h264 @ 0x7fd8fc08e340] Slice 0 param buffer (3128 bytes) is 0.
+[h264 @ 0x7fd8fc08e340] Slice 0 data buffer (903 bytes) is 0x5.
+[h264 @ 0x7fd8fc08e340] Decode to surface 0x10.
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0aae80] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[00007fd8f8062820] main video output debug: picture might be displayed late (missing 5 ms)
+[h264 @ 0x7fd8fc0aae80] ct_type:0 pic_struct:0
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 0, 672 bytes) is 0x5.
+[h264 @ 0x7fd8fc0aae80] Param buffer (type 1, 240 bytes) is 0.
+[h264 @ 0x7fd8fc0aae80] Slice 0 param buffer (3128 bytes) is 0x4.
+[h264 @ 0x7fd8fc0aae80] Slice 0 data buffer (15743 bytes) is 0x2.
+[h264 @ 0x7fd8fc0aae80] Decode to surface 0xf.
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 9(AUD), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 6(SEI), nal_ref_idc: 0
+[h264 @ 0x7fd8fc0c7980] nal_unit_type: 1(Coded slice of a non-IDR picture), nal_ref_idc: 1
+[h264 @ 0x7fd8fc0c7980] ct_type:0 pic_struct:0

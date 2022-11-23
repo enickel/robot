@@ -1,0 +1,7 @@
+*** Settings ***
+Library    Process     
+
+*** Test Cases *** 
+Python Tiny Program
+    ${result} =     Run Process     python    -c    print('Hello, world!') 
+    Log    ${result.stdout}
