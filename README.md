@@ -41,6 +41,6 @@ echo $PATH
 robot ~/Documents/@projects/robotframework/tv/tv_check_extended.robot 
 
 // Option B - Non Path based
-python3 -m ~/Documents/@projects/robotframework/tv/robot tv_check_extended.robot 
+python3 -m robot ~/Documents/@projects/robotframework/tv/tv_check_extended.robot 
 ```
 
